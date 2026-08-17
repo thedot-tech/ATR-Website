@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Active Theory — Creative &amp; AI Agency | Bengaluru &amp; Coimbatore</title>
+<meta name="description" content="Active Theory is a creative and AI agency with studios in Bengaluru and Coimbatore. Brand identity, web design, performance marketing and AI systems for real estate, D2C and SaaS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --iris:#7B57CE;
+    --iris-2:#9B7FE8;
+    --iris-3:#3D2080;
+    --sun:#FFD166;
+    --ink:#0A0812;
+    --ink-2:#0F0C1A;
+    --ink-3:#161230;
+    --white:#FFFFFF;
+    --muted:#5A5268;
+    --muted-2:#A89FC0;
+    --border:rgba(255,255,255,0.06);
+    --border-light:rgba(255,255,255,0.08);
+    --glow-iris:rgba(123,87,206,0.12);
+    --glow-sun:rgba(255,209,102,0.1);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--muted-2);
+    font-family:'Satoshi',sans-serif;
+    font-weight:400;
+    line-height:1.75;
+    overflow-x:hidden;
+    cursor:none;
+  }
+  @media (max-width:900px){ body{ cursor:auto; } }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  ul{list-style:none;}
+  input,select,textarea{font-family:inherit;}
+
+  .wrap{ max-width:1120px; margin:0 auto; padding-inline:clamp(20px,5vw,60px); }
+  section{ padding:clamp(80px,10vw,120px) 0; border-top:1px solid var(--border); position:relative; }
+  .eyebrow{
+    font-family:'DM Sans',sans-serif;
+    font-weight:600;
+    font-size:0.68rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  h1,h2,h3{ font-family:'Clash Display',sans-serif; letter-spacing:-0.03em; color:var(--white); }
+  .section-title{ font-weight:800; font-size:clamp(1.8rem,3vw,2.8rem); margin-top:12px; }
+  .section-sub{ margin-top:14px; max-width:480px; font-size:0.92rem; }
+
+  /* scroll progress */
+  #scroll-progress{
+    position:fixed; top:0; left:0; height:2px; width:0%;
+    background:linear-gradient(90deg,var(--iris),var(--sun));
+    z-index:9999; transition:width .1s linear;
+  }
+
+  /* cursor */
+  #cur{
+    position:fixed; top:0; left:0; width:8px; height:8px; border-radius:50%;
+    background:var(--sun); pointer-events:none; z-index:9999;
+    transform:translate(-50%,-50%);
+    transition:width .25s ease,height .25s ease,mix-blend-mode .25s ease;
+    display:none;
+  }
+  #cur.big{ width:32px;height:32px; mix-blend-mode:difference; }
+  @media (min-width:901px){ #cur{ display:block; } }
+
+  /* reveal */
+  .rv{ opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+  .rv.on{ opacity:1; transform:translateY(0); }
+  .rv-d1{ transition-delay:.1s; }
+  .rv-d2{ transition-delay:.2s; }
+  .rv-d3{ transition-delay:.3s; }
+  .rv-d4{ transition-delay:.4s; }
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{ animation-duration:.01ms!important; transition-duration:.01ms!important; }
+  }
+
+  /* ============ NAVBAR ============ */
+  #nav{
+    position:fixed; top:12px; left:50%; transform:translateX(-50%); width:calc(100% - 48px); max-width:1100px; z-index:1000;
+    background:rgba(10,8,18,0.6); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+    border:1px solid var(--border-light); border-radius:100px;
+    transition:all .3s ease;
+  }
+  #nav.scrolled{
+    background:rgba(10,8,18,0.85);
+    border-color:rgba(255,255,255,0.1);
+  }
+  .nav-inner{
+    max-width:1100px; margin:0 auto; padding:12px clamp(20px,3vw,36px);
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+  }
+  .nav-logo{ display:flex; flex-direction:column; line-height:1.15; }
+  .nav-logo span{ font-family:'Clash Display',sans-serif; font-weight:800; font-size:0.85rem; color:var(--white); letter-spacing:0.1em; }
+  .nav-logo small{ font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.55rem; color:var(--muted); letter-spacing:0.08em; margin-top:3px; display:none; }
+  .nav-links{ display:flex; gap:28px; }
+  .nav-links a{
+    font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.78rem;
+    color:var(--muted-2); transition:color .2s ease; position:relative;
+  }
+  .nav-links a:hover{ color:var(--white); }
+  .nav-links a.active{ color:var(--sun); }
+  .nav-cta{
+    background:var(--iris); color:var(--white);
+    font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.72rem;
+    letter-spacing:0.06em; padding:10px 22px; border-radius:100px;
+    transition:background .2s ease, box-shadow .2s ease; white-space:nowrap;
+  }
+  .nav-cta:hover{ background:var(--iris-2); box-shadow:0 0 28px var(--glow-iris); }
+  .hamburger{ display:none; width:22px; height:16px; position:relative; flex-direction:column; justify-content:space-between; }
+  .hamburger span{ display:block; width:100%; height:2px; background:var(--white); border-radius:1px; }
+  #mobile-overlay{
+    position:fixed; inset:0; background:rgba(10,8,18,0.97); backdrop-filter:blur(20px); z-index:1100;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px;
+    transform:translateY(-100%); transition:transform .4s ease;
+  }
+  #mobile-overlay.open{ transform:translateY(0); }
+  #mobile-overlay a{ font-family:'Clash Display',sans-serif; font-weight:700; font-size:1.8rem; color:var(--white); transition:color .2s ease; }
+  #mobile-overlay a:hover{ color:var(--sun); }
+  #mobile-overlay a.active{ color:var(--sun); }
+  #mobile-close{ position:absolute; top:24px; right:24px; font-size:2rem; color:var(--white); background:none; }
+
+  @media (max-width:768px){
+    #nav{ top:0; width:100%; border-radius:0; border-left:none; border-right:none; }
+    .nav-links{ display:none; }
+    .nav-cta{ display:none; }
+    .hamburger{ display:flex; }
+  }
+
+  /* ============ HERO ============ */
+  #hero{
+    min-height:100vh; padding-top:100px; border-top:none;
+    display:grid; grid-template-columns:55% 45%; align-items:center;
+  }
+  .hero-left{ padding:0 clamp(20px,5vw,60px); }
+  .hero-left h1{
+    font-weight:700; font-size:clamp(2.8rem,5.2vw,5.5rem); line-height:0.95;
+    text-transform:uppercase; margin-top:20px; letter-spacing:-0.03em;
+  }
+  .hero-left h1 span{ display:block; }
+  .hero-line{ display:block; overflow:hidden; }
+  .hero-line--accent{
+    color:var(--sun);
+    text-shadow:0 0 60px rgba(255,209,102,0.2);
+  }
+  .hero-line-inner{ display:block; transform:translateY(110%); animation:heroReveal .8s cubic-bezier(.22,1,.36,1) forwards; }
+  .hero-line:nth-child(1) .hero-line-inner{ animation-delay:.2s; }
+  .hero-line:nth-child(2) .hero-line-inner{ animation-delay:.4s; }
+  .hero-line:nth-child(3) .hero-line-inner{ animation-delay:.6s; }
+  @keyframes heroReveal{ to{ transform:translateY(0); } }
+  .hero-sub{ margin-top:24px; max-width:400px; font-size:0.92rem; line-height:1.75; }
+  .hero-sub em{ color:var(--white); font-style:normal; font-weight:500; }
+  .btn-sun{
+    display:inline-block; background:var(--sun); color:var(--ink);
+    font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.78rem;
+    letter-spacing:0.04em; padding:14px 28px; border-radius:100px;
+    transition:box-shadow .3s ease, transform .3s ease; margin-top:32px;
+  }
+  .btn-sun:hover{ box-shadow:0 0 40px var(--glow-sun); transform:translateY(-2px); }
+  .hero-micro{
+    margin-top:14px; font-family:'DM Sans',sans-serif; font-weight:500;
+    font-size:0.72rem; color:var(--muted); letter-spacing:0.04em;
+  }
+  .pills{ margin-top:20px; display:flex; gap:10px; flex-wrap:wrap; }
+  .pill{
+    border:1px solid var(--border-light); border-radius:100px; padding:5px 14px;
+    font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.65rem; color:var(--muted-2);
+  }
+  .pill .dot{ color:var(--sun); font-size:0.45rem; margin-right:4px; }
+
+  .hero-right{
+    position:relative; height:100vh; overflow:hidden;
+    background:#0a0612;
+  }
+  .hero-right img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    filter:brightness(0.55) contrast(1.1) saturate(0.7);
+  }
+  .hero-right::before{
+    content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg,rgba(10,6,18,0.3) 0%,rgba(10,6,18,0.1) 40%,rgba(10,6,18,0.6) 100%);
+  }
+  .hero-right::after{
+    content:''; position:absolute; inset:0; z-index:2; pointer-events:none;
+    background:
+      radial-gradient(ellipse 60% 60% at 40% 45%,rgba(123,87,206,0.25) 0%,transparent 70%),
+      radial-gradient(ellipse 40% 50% at 70% 70%,rgba(255,209,102,0.15) 0%,transparent 70%);
+  }
+  .hero-vignette{
+    position:absolute; inset:0; z-index:3; pointer-events:none;
+    background:radial-gradient(ellipse 80% 80% at 50% 50%,transparent 30%,rgba(10,6,18,0.7) 100%);
+  }
+  .hero-noise{
+    position:absolute; inset:0; z-index:4; pointer-events:none; opacity:0.025;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:200px 200px;
+  }
+  @keyframes pulse{ 0%,100%{opacity:0.6;} 50%{opacity:1;} }
+  .at-badge{
+    position:absolute; bottom:60px; right:40px; width:96px; height:96px; border-radius:50%;
+    border:1px solid rgba(255,255,255,0.15); background:rgba(10,8,18,0.7);
+    backdrop-filter:blur(12px); display:flex; flex-direction:column; align-items:center; justify-content:center;
+    animation:rotate 20s linear infinite;
+  }
+  @keyframes rotate{ from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+  .at-badge b{ font-family:'Clash Display',sans-serif; font-weight:800; font-size:1.3rem; color:var(--white); }
+  .at-badge span{ font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.38rem; letter-spacing:0.14em; color:var(--muted-2); margin-top:2px; }
+
+  @media (max-width:900px){
+    #hero{ grid-template-columns:1fr; min-height:auto; padding-top:80px; }
+    .hero-right{ height:55vh; order:-1; }
+    .hero-left{ padding:40px clamp(20px,5vw,60px); }
+  }
+
+  /* ============ TRUST BAR ============ */
+  #trust{ background:var(--ink-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:24px 0; }
+  .trust-inner{ display:flex; align-items:center; gap:40px; }
+  .trust-label{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.6rem; letter-spacing:0.18em; color:var(--muted); white-space:nowrap; }
+  .mq-wrap{ overflow:hidden; flex:1; }
+  @keyframes mq{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .mq-track{ display:flex; gap:12px; width:max-content; white-space:nowrap; animation:mq 25s linear infinite; }
+  .mq-track:hover{ animation-play-state:paused; }
+  .logo-pill{
+    background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px;
+    padding:8px 20px; font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.75rem;
+    color:rgba(255,255,255,0.3); letter-spacing:0.1em; white-space:nowrap;
+    transition:border-color .3s ease, color .3s ease;
+  }
+  .logo-pill:hover{ border-color:rgba(255,255,255,0.15); color:rgba(255,255,255,0.5); }
+  @media (max-width:768px){ .trust-inner{ gap:20px; } .trust-label{ font-size:0.5rem; } }
+
+  /* ============ POSITIONING ============ */
+  #positioning{ background:var(--ink-3); }
+  .pos-grid{ display:grid; grid-template-columns:45% 55%; gap:72px; align-items:center; }
+  #positioning h2{ font-weight:800; font-size:clamp(2.6rem,4.5vw,4rem); letter-spacing:-0.04em; line-height:1.05; margin-top:14px; }
+  #positioning h2 .pos-highlight{ color:var(--sun); }
+  #positioning .body-p{ margin-top:18px; font-size:0.95rem; }
+  #positioning .body-p + .body-p{ margin-top:14px; }
+  .link-sun{ display:inline-block; margin-top:24px; font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.8rem; color:var(--sun); letter-spacing:0.06em; transition:letter-spacing .3s ease; }
+  .link-sun:hover{ letter-spacing:0.1em; }
+  .pos-panel{ background:var(--ink-2); border-radius:12px; border:1px solid var(--border); padding:36px; }
+  .stat-box .num{ font-family:'Clash Display',sans-serif; font-weight:800; font-size:2.8rem; color:var(--sun); }
+  .stat-box .lbl{ font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.72rem; color:var(--muted-2); margin-top:6px; }
+  .divider{ height:1px; background:var(--border); margin:22px 0; }
+  .origin-quote{
+    font-style:italic; font-size:0.88rem; color:var(--muted-2); border-left:2px solid var(--iris);
+    padding-left:16px; margin-top:24px; line-height:1.7;
+  }
+  @media (max-width:900px){ .pos-grid{ grid-template-columns:1fr; gap:36px; } }
+
+  /* ============ STATS ============ */
+  #stats{ background:var(--ink-2); }
+  #stats .eyebrow{ text-align:center; margin-bottom:36px; }
+  .stats-grid{ display:grid; grid-template-columns:repeat(5,1fr); align-items:stretch; }
+  .stat-item{ padding:40px 20px; padding-block:48px; text-align:center; border-right:1px solid var(--border); }
+  .stat-item:last-child{ border-right:none; }
+  .stat-item .num{ font-family:'Clash Display',sans-serif; font-weight:800; font-size:clamp(2.2rem,3.5vw,3.2rem); color:var(--sun); letter-spacing:-0.04em; }
+  .stat-item .num.num-sm{ font-size:clamp(1.8rem,3vw,2.6rem); white-space:nowrap; }
+  .stat-item .lbl{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.75rem; color:var(--white); margin-top:10px; }
+  .stat-item .sub{ font-size:0.68rem; color:var(--muted); margin-top:4px; }
+  @media (max-width:600px){
+    .stats-grid{ grid-template-columns:repeat(2,1fr); }
+    .stat-item{ border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .stat-item:nth-child(5){ grid-column:1/3; border-bottom:none; }
+  }
+
+  /* ============ FEATURED WORK ============ */
+  .section-head-row{ display:flex; justify-content:space-between; align-items:center; margin-bottom:40px; flex-wrap:wrap; gap:16px; }
+  .head-link{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.72rem; color:var(--iris-2); transition:color .2s ease; }
+  .head-link:hover{ color:var(--white); }
+
+  .work-card{ display:grid; grid-template-columns:1fr 1fr; min-height:420px; border-top:1px solid var(--border); }
+  .work-card:first-of-type{ border-top:none; }
+  .work-img{ position:relative; overflow:hidden; transition:filter .4s ease; }
+  .work-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .work-img:hover{ filter:brightness(1.1); }
+  .work-details{ padding:44px 36px; background:var(--ink-2); display:flex; flex-direction:column; justify-content:center; }
+  .work-details h3{ font-weight:700; font-size:clamp(1.6rem,2.5vw,2.4rem); margin-top:10px; }
+  .work-details p{ margin-top:14px; max-width:340px; font-size:0.92rem; }
+  .tags{ margin-top:20px; display:flex; gap:8px; flex-wrap:wrap; }
+  .tag{ border:1px solid var(--border-light); border-radius:100px; padding:4px 12px; font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.66rem; color:var(--muted-2); }
+  .view-link{ display:inline-flex; align-items:center; gap:6px; margin-top:28px; font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.78rem; color:var(--iris-2); transition:color .2s ease, gap .2s ease; }
+  .view-link:hover{ color:var(--sun); gap:10px; }
+
+  @media (max-width:900px){
+    .work-card{ grid-template-columns:1fr; min-height:auto; }
+    .work-img{ height:260px; }
+    .work-card.reverse .work-img{ order:0; }
+    .work-card.reverse .work-details{ order:1; }
+  }
+
+  /* ============ WHAT WE DO ============ */
+  #services{ background:var(--ink-3); }
+  .serv-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; gap:24px; flex-wrap:wrap; }
+  #services h2{ font-weight:800; font-size:clamp(1.8rem,3vw,2.8rem); margin-top:12px; }
+  .serv-note{ font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.68rem; color:var(--muted); text-align:right; max-width:200px; }
+  .serv-grid{ display:grid; grid-template-columns:repeat(4,1fr); }
+  .serv-col{
+    padding:36px 28px; border-right:1px solid var(--border);
+    border-top:2px solid transparent;
+    transition:border-color .3s ease, background .3s ease, transform .3s ease;
+  }
+  .serv-col:last-child{ border-right:none; }
+  .serv-col:hover{
+    border-right-color:var(--iris-3);
+    border-top-color:var(--iris);
+    background:rgba(255,255,255,0.02);
+    transform:translateY(-4px);
+  }
+  .serv-num{ font-family:'Clash Display',sans-serif; font-weight:800; font-size:0.85rem; color:var(--muted); letter-spacing:0.06em; }
+  .serv-col h3{ font-weight:700; font-size:1.1rem; margin-top:20px; }
+  .serv-col p{ font-size:0.85rem; margin-top:10px; line-height:1.7; }
+  .serv-arrow{ display:block; margin-top:24px; color:var(--iris-2); font-size:1rem; transition:transform .3s ease, color .3s ease; }
+  .serv-col:hover .serv-arrow{ transform:translateX(6px); color:var(--sun); }
+  @media (max-width:900px){ .serv-grid{ grid-template-columns:repeat(2,1fr); } .serv-col{ border-bottom:1px solid var(--border); } }
+  @media (max-width:480px){ .serv-grid{ grid-template-columns:1fr; } }
+
+  /* ============ INDUSTRIES ============ */
+  #industries{ background:var(--ink-2); }
+  #industries h2{ font-weight:800; font-size:clamp(1.8rem,3vw,2.8rem); margin-top:12px; }
+  #industries > .wrap > .rv:first-child p{ margin-top:14px; max-width:540px; font-size:0.92rem; }
+  .ind-row{
+    display:grid; grid-template-columns:80px auto 48px; align-items:center; gap:28px;
+    padding:40px 0; border-bottom:1px solid var(--border); border-top:1px solid var(--border);
+    margin-top:-1px; transition:padding-left .3s ease;
+  }
+  .ind-row:hover{ padding-left:12px; }
+  .ind-num{ font-family:'Clash Display',sans-serif; font-weight:800; font-size:5rem; color:var(--iris); opacity:0.08; line-height:1; user-select:none; }
+  .ind-content h3{ font-weight:700; font-size:clamp(1.3rem,2.2vw,1.8rem); }
+  .ind-content p{ font-size:0.88rem; margin-top:8px; max-width:500px; line-height:1.7; }
+  .ind-content .link-arrow{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.75rem; color:var(--iris-2); margin-top:12px; display:block; transition:color .2s ease; }
+  .ind-content .link-arrow:hover{ color:var(--sun); }
+  .ind-arrow{ color:var(--iris-2); font-size:1.5rem; transition:transform .3s ease; }
+  .ind-row:hover .ind-arrow{ transform:translateX(6px); }
+  .ind-footer{ margin-top:24px; font-style:italic; font-size:0.85rem; color:var(--muted); }
+  @media (max-width:768px){
+    .ind-row{ grid-template-columns:48px 1fr; }
+    .ind-arrow{ display:none; }
+    .ind-num{ font-size:3rem; }
+  }
+
+  /* ============ PROCESS ============ */
+  .proc-grid{ display:grid; grid-template-columns:repeat(5,1fr); }
+  .proc-card{ padding:32px 24px; border-right:1px solid var(--border); }
+  .proc-card:last-child{ border-right:none; }
+  .proc-top{ border-top:2px solid var(--border); transition:border-color .4s ease; }
+  .proc-card:hover .proc-top{ border-top-color:var(--iris); }
+  .proc-step{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.65rem; color:var(--iris-2); letter-spacing:0.1em; margin-top:18px; }
+  .proc-card h3{ font-weight:700; font-size:1rem; margin-top:14px; }
+  .proc-card p{ font-size:0.82rem; margin-top:8px; line-height:1.7; }
+  @media (max-width:900px){ .proc-grid{ grid-template-columns:repeat(2,1fr); } .proc-card{ border-bottom:1px solid var(--border); } }
+  @media (max-width:480px){ .proc-grid{ grid-template-columns:1fr; } }
+
+  /* ============ WHY US ============ */
+  #whyus{ background:var(--ink-3); }
+  .why-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px; }
+  .why-card{
+    background:var(--ink-2); padding:40px 32px; border:1px solid var(--border); border-radius:12px;
+    transition:border-color .3s ease, transform .3s ease;
+  }
+  .why-card:hover{ border-color:rgba(123,87,206,0.2); transform:translateY(-4px); }
+  .why-icon{ font-family:'Clash Display',sans-serif; font-weight:800; font-size:2.2rem; color:var(--iris); opacity:0.2; line-height:1; margin-bottom:20px; }
+  .why-card h3{ font-weight:700; font-size:1.1rem; margin-bottom:12px; }
+  .why-card p{ font-size:0.88rem; line-height:1.7; }
+  @media (max-width:900px){ .why-grid{ grid-template-columns:1fr; } }
+
+  /* ============ WHO WE ARE ============ */
+  #whoweare{ background:var(--ink-2); }
+  .who-grid{ display:grid; grid-template-columns:42% 58%; gap:64px; align-items:center; }
+  .who-img{ height:400px; border-radius:12px; overflow:hidden; position:relative; background:var(--ink-2); border:1px solid var(--border); }
+  .who-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+  #whoweare h2{ font-weight:800; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.15; margin-top:14px; }
+  #whoweare .body-txt{ margin-top:18px; max-width:400px; font-size:0.92rem; }
+  .who-note{ margin-top:18px; border-left:2px solid var(--iris); padding-left:16px; font-style:italic; font-size:0.85rem; line-height:1.7; }
+  .who-stats{ margin-top:40px; display:flex; gap:44px; flex-wrap:wrap; }
+  .who-stats .num{ font-family:'Clash Display',sans-serif; font-weight:800; font-size:2rem; color:var(--sun); }
+  .who-stats .lbl{ font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.72rem; color:var(--muted-2); margin-top:4px; }
+  @media (max-width:900px){ .who-grid{ grid-template-columns:1fr; gap:36px; } }
+
+  /* ============ TESTIMONIALS ============ */
+  .test-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .test-card{
+    background:var(--ink-2); border:1px solid var(--border-light); border-radius:14px;
+    padding:36px 32px; display:flex; flex-direction:column;
+    box-shadow:0 8px 32px rgba(0,0,0,0.4), 0 2px 8px rgba(123,87,206,0.06);
+    transform:translateY(0);
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .test-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 16px 48px rgba(0,0,0,0.5), 0 4px 16px rgba(123,87,206,0.12);
+    border-color:rgba(123,87,206,0.15);
+  }
+  .quote-mark{ font-family:'Clash Display',sans-serif; font-weight:800; font-size:3.2rem; color:var(--iris); line-height:0.7; margin-bottom:14px; }
+  .quote-text{ font-size:0.92rem; color:var(--white); line-height:1.7; flex:1; }
+  .attribution{ margin-top:28px; padding-top:18px; border-top:1px solid var(--border); }
+  .attribution .name{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.85rem; color:var(--white); }
+  .attribution .role{ font-family:'DM Sans',sans-serif; font-weight:400; font-size:0.75rem; color:var(--muted-2); margin-top:2px; }
+  @media (max-width:900px){ .test-grid{ grid-template-columns:1fr; gap:20px; } }
+
+  /* ============ FAQ ============ */
+  #faq{ background:var(--ink-3); }
+  .faq-item{ border-bottom:1px solid var(--border); }
+  .faq-item summary{
+    padding:20px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+    list-style:none; gap:20px;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary .q{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.92rem; color:var(--white); transition:color .2s ease; }
+  .faq-item summary:hover .q{ color:var(--sun); }
+  .faq-icon{ color:var(--iris-2); font-size:1.1rem; transition:transform .3s ease; flex-shrink:0; }
+  .faq-item[open] .faq-icon{ transform:rotate(45deg); }
+  .faq-item .a{ font-size:0.88rem; line-height:1.75; padding:0 60px 20px 0; max-width:72ch; }
+  @media (max-width:600px){ .faq-item .a{ padding-right:0; } }
+
+  /* ============ CONTACT ============ */
+  #contact{ background:var(--ink-2); }
+  .contact-grid{ display:grid; grid-template-columns:52% 48%; gap:64px; }
+  #contact h2{ font-weight:800; font-size:clamp(2.4rem,5vw,4.5rem); letter-spacing:-0.03em; line-height:1.02; margin-top:14px; }
+  .contact-sub{ margin-top:14px; max-width:360px; font-size:0.92rem; }
+  .cta-row{ margin-top:28px; display:flex; align-items:center; gap:12px; }
+  .circle-arrow{
+    width:30px; height:30px; border:1.5px solid var(--sun); border-radius:50%; color:var(--sun);
+    display:flex; align-items:center; justify-content:center; font-size:0.85rem; flex-shrink:0;
+  }
+  .cta-row .txt{ font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.72rem; color:var(--sun); letter-spacing:0.1em; }
+  .contact-details{ margin-top:36px; display:flex; flex-direction:column; gap:8px; }
+  .contact-details .row{ display:flex; align-items:center; gap:10px; }
+  .contact-details .icon{ color:var(--iris-2); font-size:0.8rem; }
+  .contact-details .txt2{ font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.8rem; color:var(--muted-2); }
+  .offices{ margin-top:24px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .office .city{ font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .office address{ font-style:normal; font-size:0.82rem; color:var(--muted-2); line-height:1.6; }
+
+  form{ display:flex; flex-direction:column; gap:10px; }
+  .field{
+    background:rgba(255,255,255,0.03); border:1px solid var(--border-light); border-radius:8px;
+    padding:13px 16px; font-size:0.88rem; color:var(--white); width:100%; transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field::placeholder{ color:var(--muted); }
+  .field:focus{ outline:none; border-color:var(--iris); box-shadow:0 0 0 3px var(--glow-iris); }
+  .field.err{ border-color:#ef4444; }
+  .row2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  select.field{ appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23A89FC0'><path d='M5 7l5 5 5-5z'/></svg>"); background-repeat:no-repeat; background-position:right 14px center; }
+  textarea.field{ min-height:90px; resize:vertical; font-family:inherit; }
+  .btn-submit{
+    background:var(--sun); color:var(--ink); font-family:'DM Sans',sans-serif; font-weight:700;
+    font-size:0.85rem; letter-spacing:0.04em; padding:14px 28px; border-radius:100px; width:100%;
+    transition:box-shadow .3s, transform .3s;
+  }
+  .btn-submit:hover{ box-shadow:0 0 32px var(--glow-sun); transform:translateY(-2px); }
+  .success-msg{ font-family:'Clash Display',sans-serif; font-weight:700; font-size:1.1rem; color:var(--sun); text-align:center; padding:44px 0; display:none; }
+  @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; gap:40px; } }
+  @media (max-width:480px){ .row2{ grid-template-columns:1fr; } .offices{ grid-template-columns:1fr; } }
+
+  /* ============ FOOTER ============ */
+  footer{ padding:36px 0; border-top:1px solid var(--border); }
+  .foot-top{ display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
+  .foot-logo{ font-family:'Clash Display',sans-serif; font-weight:800; font-size:0.8rem; color:var(--white); letter-spacing:0.08em; line-height:1.2; }
+  .foot-copy{ font-family:'DM Sans',sans-serif; font-weight:400; font-size:0.65rem; color:var(--muted); margin-top:6px; }
+  .foot-socials, .foot-legal{ display:flex; gap:24px; }
+  .foot-legal{ gap:18px; }
+  .foot-socials a, .foot-legal a{ font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.7rem; color:var(--muted-2); letter-spacing:0.04em; transition:color .2s ease; }
+  .foot-socials a:hover, .foot-legal a:hover{ color:var(--white); }
+  .foot-bottom{ margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.04); text-align:center; }
+  .foot-bottom p{ font-family:'DM Sans',sans-serif; font-weight:500; font-size:0.7rem; color:var(--muted); letter-spacing:0.06em; }
+
+  /* ============ MOBILE FIXES (<=768px) ============ */
+  @media (max-width:768px){
+    /* Hero */
+    #hero{ display:flex; flex-direction:column-reverse; min-height:auto; padding-top:72px; }
+    .hero-right{ height:55vh; }
+    .hero-left{ padding:36px clamp(20px,5vw,60px); }
+    .hero-left h1{ font-size:clamp(2.2rem,7vw,3rem); }
+
+    /* Stats */
+    .stats-grid{ grid-template-columns:1fr 1fr; }
+    .stat-item{ border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .stat-item:nth-child(5){ grid-column:1/3; border-bottom:none; }
+
+    /* Services */
+    .serv-grid{ grid-template-columns:1fr; }
+
+    /* Why Us */
+    .why-grid{ grid-template-columns:1fr; }
+
+    /* Testimonials */
+    .test-grid{ grid-template-columns:1fr; }
+
+    /* Contact */
+    .contact-grid{ grid-template-columns:1fr; gap:40px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<div id="cur"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span>ACTIVE</span>
+      <span>THEORY</span>
+      <small>Creative &amp; AI Agency · Bengaluru &amp; Coimbatore</small>
+    </div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#whoweare">About</a>
+      <a href="#faq">Insights</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">START A PROJECT →</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div id="mobile-overlay">
+  <button id="mobile-close" aria-label="Close menu">×</button>
+  <a href="#work">Work</a>
+  <a href="#services">Services</a>
+  <a href="#whoweare">About</a>
+  <a href="#faq">Insights</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-left">
+      <p class="eyebrow rv">STUDIO — BENGALURU &amp; COIMBATORE</p>
+      <h1 class="rv">
+        <span class="hero-line"><span class="hero-line-inner">WE MAKE</span></span>
+        <span class="hero-line hero-line--accent"><span class="hero-line-inner">BRANDS HIT</span></span>
+        <span class="hero-line"><span class="hero-line-inner">DIFFERENT.</span></span>
+      </h1>
+      <p class="hero-sub rv">Not another agency deck. We are the ones your competitors <em>actually</em> worry about — building identity, performance, and AI for brands across South India that refuse to look like everyone else.</p>
+      <a href="#contact" class="btn-sun rv">TELL US WHAT YOU'RE BUILDING →</a>
+      <p class="hero-micro rv">First call is free. No pitch. No pretence. Just truth about what your brand needs.</p>
+      <div class="pills rv">
+        <span class="pill"><span class="dot">●</span>BENGALURU</span>
+        <span class="pill"><span class="dot">●</span>COIMBATORE</span>
+        <span class="pill"><span class="dot">●</span>REMOTE</span>
+      </div>
+    </div>
+    <div class="hero-right" role="img" aria-label="Creative studio work by Active Theory">
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&h=1200&fit=crop&auto=format" alt="Creative design workspace with branding materials" loading="eager">
+      <div class="hero-vignette"></div>
+      <div class="hero-noise"></div>
+      <div class="at-badge">
+        <b>AT</b>
+        <span>CREATIVE</span>
+        <span>INTELLIGENCE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section id="trust" aria-label="Trusted by">
+    <div class="wrap trust-inner">
+      <span class="trust-label">TRUSTED BY AMBITIOUS BRANDS</span>
+      <div class="mq-wrap">
+        <div class="mq-track" id="marqueeTrack">
+          <span class="logo-pill">ATOMBERG</span>
+          <span class="logo-pill">BEWAKOOF</span>
+          <span class="logo-pill">DERMA CO</span>
+          <span class="logo-pill">FITS</span>
+          <span class="logo-pill">PLUM</span>
+          <span class="logo-pill">MAMAEARTH</span>
+          <span class="logo-pill">ATOMBERG</span>
+          <span class="logo-pill">BEWAKOOF</span>
+          <span class="logo-pill">DERMA CO</span>
+          <span class="logo-pill">FITS</span>
+          <span class="logo-pill">PLUM</span>
+          <span class="logo-pill">MAMAEARTH</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONING -->
+  <section id="positioning" aria-label="Positioning" style="border-top:none;">
+    <div class="wrap pos-grid">
+      <div class="rv">
+        <p class="eyebrow rv">TWO CITIES. ONE STANDARD.</p>
+        <h2 class="rv">We speak<br><span class="pos-highlight">startup</span><br>and <span class="pos-highlight">shop floor</span>.</h2>
+        <p class="body-p">Bengaluru taught us speed. SaaS launches, D2C drops, campaigns that go live on a Tuesday and get judged by Friday.</p>
+        <p class="body-p">Coimbatore taught us substance. Engineering firms exporting to twelve countries, textile businesses in their second generation, and developers selling out phases without a website worth the name.</p>
+        <p class="body-p">Most agencies are fluent in one or the other. We work in both — which is why we can make a manufacturer look world-class and make a seed-stage product feel established. Same craft, different accent.</p>
+        <a href="#whoweare" class="link-sun">More About the Studio →</a>
+      </div>
+      <div class="rv pos-panel">
+        <div class="stat-box">
+          <div class="num">2022</div>
+          <div class="lbl">Year Active Theory was founded</div>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-box">
+          <div class="num">2</div>
+          <div class="lbl">Studios — Bengaluru &amp; Coimbatore</div>
+        </div>
+        <p class="origin-quote">"Most agencies sell the idea. We sell the outcome. If the idea doesn't survive contact with the market, it wasn't worth the whiteboard it was drawn on."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats" aria-label="Key metrics">
+    <div class="wrap">
+      <p class="eyebrow rv">THE RECEIPTS</p>
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-item rv">
+          <div class="num" data-count="12" data-suffix="+">0</div>
+          <div class="lbl">Brands built or rebuilt</div>
+          <div class="sub">Volume signal</div>
+        </div>
+        <div class="stat-item rv rv-d1">
+          <div class="num num-sm" data-prefix="₹" data-count="2.4" data-decimals="1" data-suffix=" Cr">₹0 Cr</div>
+          <div class="lbl">Ad spend managed</div>
+          <div class="sub">Qualifies us for real estate budgets</div>
+        </div>
+        <div class="stat-item rv rv-d2">
+          <div class="num" data-count="4200" data-suffix="+">0</div>
+          <div class="lbl">Qualified site visits driven</div>
+          <div class="sub">Real estate developers buy visits, not leads</div>
+        </div>
+        <div class="stat-item rv rv-d3">
+          <div class="num" data-count="3.8" data-decimals="1" data-suffix="x">0x</div>
+          <div class="lbl">Average ROAS, D2C</div>
+          <div class="sub">The only metric a D2C founder cares about</div>
+        </div>
+        <div class="stat-item rv rv-d4">
+          <div class="num" data-count="78" data-suffix="%">0</div>
+          <div class="lbl">Clients still with us after year one</div>
+          <div class="sub">Almost nobody publishes this. We do.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK -->
+  <section id="work" aria-label="Featured work">
+    <div class="wrap">
+      <div class="section-head-row rv">
+        <p class="eyebrow rv">FEATURED WORK</p>
+        <a href="#" class="head-link">FOR ALL WORK →</a>
+      </div>
+    </div>
+
+    <article class="work-card rv">
+      <div class="work-img">
+        <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&h=600&fit=crop&auto=format" alt="Auric Skincare product photography on dark background" loading="lazy">
+      </div>
+      <div class="work-details">
+        <p class="eyebrow">01 / D2C</p>
+        <h3>Auric Skincare</h3>
+        <p>Redefining science-backed skincare with a brand identity and digital experience that builds trust and scales with clarity.</p>
+        <div class="tags">
+          <span class="tag">Brand Identity</span>
+          <span class="tag">Web Design</span>
+          <span class="tag">D2C</span>
+        </div>
+        <a href="#" class="view-link">VIEW PROJECT →</a>
+      </div>
+    </article>
+
+    <article class="work-card reverse rv">
+      <div class="work-img" style="order:2;">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&auto=format" alt="Horizon Analytics dashboard showing real-time data visualization" loading="lazy">
+      </div>
+      <div class="work-details" style="order:1;">
+        <p class="eyebrow">02 / SAAS</p>
+        <h3>Horizon Analytics</h3>
+        <p>Product strategy, UI/UX and development for a modern analytics platform powering real-time commerce decisions.</p>
+        <div class="tags">
+          <span class="tag">Strategy</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">SaaS</span>
+        </div>
+        <a href="#" class="view-link">VIEW PROJECT →</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section id="services" aria-label="What we do">
+    <div class="wrap">
+      <div class="serv-head rv">
+        <div>
+          <p class="eyebrow rv">WHAT WE DO</p>
+          <h2 class="rv">Four things. Done properly.</h2>
+        </div>
+        <p class="serv-note">FOUR DISCIPLINES. ONE INTEGRATED APPROACH.</p>
+      </div>
+      <div class="serv-grid">
+        <div class="serv-col rv">
+          <p class="serv-num">01</p>
+          <h3>Brand Identity</h3>
+          <p>Naming, identity systems, typography, colour, tone of voice, and the guidelines that stop it all falling apart six months later. For new brands, and for old ones that stopped looking like themselves.</p>
+          <span class="serv-arrow">→</span>
+        </div>
+        <div class="serv-col rv rv-d1">
+          <p class="serv-num">02</p>
+          <h3>Web Design &amp; Development</h3>
+          <p>Sites that load fast, read clearly, and turn visitors into enquiries. Design, copy, build, and handover — including CMS training, so you are not emailing us to change a phone number.</p>
+          <span class="serv-arrow">→</span>
+        </div>
+        <div class="serv-col rv rv-d2">
+          <p class="serv-num">03</p>
+          <h3>Performance Marketing</h3>
+          <p>Meta, Google, and LinkedIn run against pipeline, not impressions. Creative and media sit in the same team. You see the account, the spend, and the losses.</p>
+          <span class="serv-arrow">→</span>
+        </div>
+        <div class="serv-col rv rv-d3">
+          <p class="serv-num">04</p>
+          <h3>AI Systems</h3>
+          <p>Lead qualification agents, WhatsApp assistants that respond in nine seconds instead of nine hours, internal tools, and AI search visibility. We build the systems, not slide decks about them.</p>
+          <span class="serv-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section id="industries" aria-label="Industries">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow rv">WHERE WE GO DEEP</p>
+        <h2 class="rv">Three industries we know better than our clients expect.</h2>
+        <p>Generalists learn your business on your budget. We already know these rooms — the sales cycles, the objections, the metric that actually gets discussed in your Monday meeting.</p>
+      </div>
+
+      <div class="ind-row rv">
+        <div class="ind-num">01</div>
+        <div class="ind-content">
+          <h3>Real Estate</h3>
+          <p>Project launches, sales gallery films, phase-wise microsites, and campaigns measured in qualified site visits rather than form fills. We have run launches in both the Bengaluru and Coimbatore markets and we know the difference between the two buyers.</p>
+          <a href="#" class="link-arrow">Real Estate Work →</a>
+        </div>
+        <div class="ind-arrow">→</div>
+      </div>
+
+      <div class="ind-row rv">
+        <div class="ind-num">02</div>
+        <div class="ind-content">
+          <h3>D2C</h3>
+          <p>Packaging, launch films, and always-on creative for brands that live and die by return on ad spend. Coimbatore builds some of the best product in the country and sells it under someone else's label. We help brands stop doing that.</p>
+          <a href="#" class="link-arrow">D2C Work →</a>
+        </div>
+        <div class="ind-arrow">→</div>
+      </div>
+
+      <div class="ind-row rv">
+        <div class="ind-num">03</div>
+        <div class="ind-content">
+          <h3>SaaS &amp; Tech</h3>
+          <p>Positioning, product marketing sites, and demand generation for teams whose product is better than their pitch. Fewer adjectives, clearer category, shorter sales cycle.</p>
+          <a href="#" class="link-arrow">SaaS Work →</a>
+        </div>
+        <div class="ind-arrow">→</div>
+      </div>
+
+      <p class="ind-footer rv">Not on the list? The process does not change. Tell us what you sell and who buys it.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" aria-label="Our process">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow rv">HOW WE ROLL</p>
+        <h2 class="rv section-title">Five steps. No black box.</h2>
+        <p class="section-sub">You will always know what is happening, what is next, and what we need from you.</p>
+      </div>
+      <div class="proc-grid" style="margin-top:44px;">
+        <div class="proc-card rv"><div class="proc-top"></div>
+          <p class="proc-step">01 · THE FIRST CALL</p>
+          <h3>The First Call</h3>
+          <p>Thirty minutes, free, no deck. We ask about your business before we say a word about design. Half the time we tell you that you do not need the thing you came asking for.</p>
+        </div>
+        <div class="proc-card rv"><div class="proc-top"></div>
+          <p class="proc-step">02 · DIG</p>
+          <h3>Dig</h3>
+          <p>Competitor teardowns, customer conversations, analytics, ad account audits, and a hard look at what you already have. We come back with what we found, including the uncomfortable parts.</p>
+        </div>
+        <div class="proc-card rv"><div class="proc-top"></div>
+          <p class="proc-step">03 · DIRECTION</p>
+          <h3>Direction</h3>
+          <p>One clear strategic route with the thinking shown. Not four options designed to make one look good. If it is wrong, we would rather find out here than in month three.</p>
+        </div>
+        <div class="proc-card rv"><div class="proc-top"></div>
+          <p class="proc-step">04 · BUILD</p>
+          <h3>Build</h3>
+          <p>Design, copy, development, shoots, campaigns, systems. Weekly check-ins, a shared board you can open at any time, and one point of contact who actually replies.</p>
+        </div>
+        <div class="proc-card rv"><div class="proc-top"></div>
+          <p class="proc-step">05 · SHIP &amp; SHARPEN</p>
+          <h3>Ship &amp; Sharpen</h3>
+          <p>We launch it, watch it, and fix what the data tells us to fix. A launch is a starting line. Anyone who hands over files and disappears was never a partner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="whyus" aria-label="Why choose us">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow rv">THE DIFFERENCE</p>
+        <h2 class="rv section-title">Three things you will notice in week one.</h2>
+      </div>
+      <div class="why-grid rv">
+        <div class="why-card">
+          <p class="why-icon">01</p>
+          <h3>Senior people, actually on your project</h3>
+          <p>The person in the pitch is the person doing the work. We stay small on purpose — no junior handoff the week after the contract is signed.</p>
+        </div>
+        <div class="why-card">
+          <p class="why-icon">02</p>
+          <h3>Designers and engineers in the same room</h3>
+          <p>Most agencies subcontract the build. We do not. It means the AI agent, the landing page, and the ad creative are made by people who talk to each other daily — and it is why our campaigns ship in days rather than weeks.</p>
+        </div>
+        <div class="why-card">
+          <p class="why-icon">03</p>
+          <h3>We tell you when it is not working</h3>
+          <p>Including when the campaign we made is the thing that is not working. Awkward for a week, worth it for years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section id="whoweare" aria-label="Who we are">
+    <div class="wrap who-grid">
+      <div class="who-img rv" role="img" aria-label="Active Theory team collaborating in the studio">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&auto=format" alt="Creative team working together at Active Theory studio" loading="lazy">
+      </div>
+      <div class="rv">
+        <p class="eyebrow rv">WHO WE ARE</p>
+        <h2 class="rv">A collective of designers, engineers, marketers and problem solvers.</h2>
+        <p class="body-txt">We believe in the intersection of creativity and intelligence. Our work is guided by strategy, driven by technology and measured by impact.</p>
+        <p class="who-note">Active Theory started in 2022 in Coimbatore — one brief, two people, and a conviction that the best companies in South India deserved branding that matched their ambition.</p>
+        <div class="who-stats">
+          <div><div class="num">50+</div><div class="lbl">Brands scaled</div></div>
+          <div><div class="num">4+</div><div class="lbl">Years in the game</div></div>
+          <div><div class="num">2</div><div class="lbl">Cities. One team.</div></div>
+        </div>
+        <a href="#" class="link-sun">More About the Studio →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" aria-label="Testimonials">
+    <div class="wrap">
+      <div class="rv" style="margin-bottom:48px;">
+        <p class="eyebrow rv">NOT OUR WORDS</p>
+        <h2 class="rv section-title">What it is like on the other side.</h2>
+      </div>
+      <div class="test-grid">
+        <article class="test-card rv">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Active Theory didn't just redesign our brand — they rebuilt how we talk about ourselves. Enquiries from the website doubled in the first quarter after launch, and cost per site visit fell by more than half.</p>
+          <div class="attribution">
+            <div class="name">Arjun Mehta</div>
+            <div class="role">Founder, NestBay Developers, Bengaluru</div>
+          </div>
+        </article>
+        <article class="test-card rv rv-d1">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">We had been running ads in-house for two years with inconsistent results. Within six weeks of Active Theory taking over, our return on ad spend went from 1.8x to 3.9x. The creative was the difference.</p>
+          <div class="attribution">
+            <div class="name">Divya Krishnan</div>
+            <div class="role">Head of Marketing, ThreadRoot D2C, Coimbatore</div>
+          </div>
+        </article>
+        <article class="test-card rv rv-d2">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">They came back to us after the first call with a problem we hadn't named. Turned out the brief was wrong and they spotted it before we did. That is the kind of agency you want on a product launch.</p>
+          <div class="attribution">
+            <div class="name">Karthik Rajan</div>
+            <div class="role">CEO, Stackr Technologies, Bengaluru</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-label="Frequently asked questions">
+    <div class="wrap">
+      <div class="rv" style="margin-bottom:40px;">
+        <p class="eyebrow rv">COMMON QUESTIONS</p>
+        <h2 class="rv section-title">What clients ask before signing.</h2>
+        <p class="section-sub">Written for humans. Also happens to rank well on Google.</p>
+      </div>
+      <div>
+        <details class="faq-item rv">
+          <summary><span class="q">What is Active Theory?</span><span class="faq-icon">+</span></summary>
+          <p class="a">Active Theory is a creative and AI agency with studios in Bengaluru, Karnataka and Coimbatore, Tamil Nadu. We work across brand identity, web design and development, performance marketing, and AI development — with deep specialisation in real estate, D2C, and SaaS.</p>
+        </details>
+        <details class="faq-item rv">
+          <summary><span class="q">Where are you located?</span><span class="faq-icon">+</span></summary>
+          <p class="a">Two studios: HSR Layout, Bengaluru — 560 102, and RS Puram, Coimbatore — 641 002. We work remotely with clients elsewhere and travel for launches, shoots, and workshops.</p>
+        </details>
+        <details class="faq-item rv">
+          <summary><span class="q">What does a project cost?</span><span class="faq-icon">+</span></summary>
+          <p class="a">Brand identity projects start at ₹3 lakh. Websites start at ₹2.5 lakh. Performance retainers start at ₹45,000 per month plus ad spend. AI development is scoped per project, typically ₹1.2 lakh upwards. We give you a fixed number after the first call — no hourly surprises.</p>
+        </details>
+        <details class="faq-item rv">
+          <summary><span class="q">How long does a project take?</span><span class="faq-icon">+</span></summary>
+          <p class="a">Brand identity runs four to six weeks. A website runs six to ten weeks depending on page count and integrations. Performance campaigns go live within two weeks of kickoff. AI builds range from three weeks for a qualification agent to three months for a custom internal platform.</p>
+        </details>
+        <details class="faq-item rv">
+          <summary><span class="q">Do you work with real estate developers?</span><span class="faq-icon">+</span></summary>
+          <p class="a">It is one of our three core verticals. We handle project launches end to end — naming, identity, sales collateral, walkthrough films, phase microsites, and the performance campaigns that fill the sales gallery. We report on cost per qualified site visit, not cost per lead.</p>
+        </details>
+        <details class="faq-item rv">
+          <summary><span class="q">What does AI development actually mean here?</span><span class="faq-icon">+</span></summary>
+          <p class="a">Practical systems, not experiments. Lead qualification agents that message an enquiry within minutes, WhatsApp assistants that answer product questions at 11pm, internal tools that kill repetitive work, and AI search optimisation so your brand appears when someone asks ChatGPT for a recommendation.</p>
+        </details>
+        <details class="faq-item rv">
+          <summary><span class="q">Do you only work with clients in Bengaluru and Coimbatore?</span><span class="faq-icon">+</span></summary>
+          <p class="a">No. Around 40% of our work is remote, across India plus clients in UAE and Singapore. Two studios means we can be in the room in person across South India when it matters — which for a project launch, it does.</p>
+        </details>
+        <details class="faq-item rv">
+          <summary><span class="q">Who actually works on my project?</span><span class="faq-icon">+</span></summary>
+          <p class="a">A team of two to four: a strategist, a designer, and depending on scope a developer, copywriter, or media buyer. A founder is on every project. No account manager relaying messages between you and the people doing the work.</p>
+        </details>
+        <details class="faq-item rv">
+          <summary><span class="q">What do you need from us to start?</span><span class="faq-icon">+</span></summary>
+          <p class="a">Access to your existing brand files, analytics, and ad accounts; one decision-maker who can approve work; and roughly two hours a week for reviews. That is genuinely it.</p>
+        </details>
+        <details class="faq-item rv">
+          <summary><span class="q">How do we get started?</span><span class="faq-icon">+</span></summary>
+          <p class="a">Book a 30-minute call at activetheory.in/contact or email hello@activetheory.in. The first conversation is free and there is no deck.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-label="Contact us">
+    <div class="wrap contact-grid">
+      <div class="rv">
+        <p class="eyebrow rv">CONTACT</p>
+        <h2 class="rv">Let's build what's next.</h2>
+        <p class="contact-sub">Have a project in mind or just want to say hello? Fill this in, or just email. You will hear from a human within one working day — usually sooner.</p>
+
+        <a href="mailto:hello@activetheory.in" class="cta-row">
+          <span class="circle-arrow">→</span>
+          <span class="txt">TELL US ABOUT YOUR PROJECT</span>
+        </a>
+
+        <div class="contact-details">
+          <div class="row"><span class="icon">✉</span><span class="txt2">hello@activetheory.in</span></div>
+          <div class="row"><span class="icon">✆</span><span class="txt2">+91 63869 820 751</span></div>
+          <div class="row"><span class="icon">⊙</span><span class="txt2">Bengaluru · Coimbatore</span></div>
+        </div>
+
+        <div class="offices">
+          <div class="office">
+            <p class="city">Bengaluru</p>
+            <address>HSR Layout<br>Bengaluru — 560 102<br>Karnataka, India</address>
+          </div>
+          <div class="office">
+            <p class="city">Coimbatore</p>
+            <address>RS Puram<br>Coimbatore — 641 002<br>Tamil Nadu, India</address>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv">
+        <form id="contactForm" novalidate>
+          <div class="row2">
+            <div>
+              <label for="fname" class="visually-hidden" style="position:absolute;left:-9999px;">Your name</label>
+              <input class="field" type="text" id="fname" name="name" placeholder="Your name" required>
+            </div>
+            <div>
+              <label for="fcompany" class="visually-hidden" style="position:absolute;left:-9999px;">Company name</label>
+              <input class="field" type="text" id="fcompany" name="company" placeholder="Company name" required>
+            </div>
+          </div>
+          <div>
+            <label for="femail" class="visually-hidden" style="position:absolute;left:-9999px;">Email</label>
+            <input class="field" type="email" id="femail" name="email" placeholder="hello@yourcompany.com" required>
+          </div>
+          <div>
+            <label for="fneed" class="visually-hidden" style="position:absolute;left:-9999px;">What do you need?</label>
+            <select class="field" id="fneed" name="need" required>
+              <option value="">What do you need?</option>
+              <option>Branding</option>
+              <option>Website</option>
+              <option>Performance Marketing</option>
+              <option>AI Development</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div>
+            <label for="fbudget" class="visually-hidden" style="position:absolute;left:-9999px;">Budget range</label>
+            <select class="field" id="fbudget" name="budget" required>
+              <option value="">Budget range</option>
+              <option>Under ₹2 lakh</option>
+              <option>₹2–5 lakh</option>
+              <option>₹5–15 lakh</option>
+              <option>₹15 lakh+</option>
+            </select>
+          </div>
+          <div>
+            <label for="fmsg" class="visually-hidden" style="position:absolute;left:-9999px;">Tell us about the project</label>
+            <textarea class="field" id="fmsg" name="message" placeholder="What is slowing you down?" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send it →</button>
+        </form>
+        <div class="success-msg" id="successMsg">Got it. We will be in touch within one working day — usually sooner.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer aria-label="Footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo">ACTIVE<br>THEORY</div>
+        <p class="foot-copy">© 2024 Active Theory. All rights reserved.</p>
+      </div>
+      <div class="foot-socials">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Youtube</a>
+      </div>
+      <div class="foot-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>Made in Bengaluru &amp; Coimbatore. Obviously.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ===== Custom cursor ===== */
+  var cur = document.getElementById('cur');
+  var isDesktop = window.matchMedia('(min-width:901px)').matches;
+  if(isDesktop){
+    var mx=0,my=0,cx=0,cy=0, moved=false;
+    window.addEventListener('mousemove', function(e){
+      mx=e.clientX; my=e.clientY;
+      if(!moved){ cx=mx; cy=my; moved=true; }
+    });
+    function loop(){
+      cx += (mx-cx)*0.12;
+      cy += (my-cy)*0.12;
+      cur.style.transform = 'translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+    document.querySelectorAll('a, button').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ cur.classList.add('big'); });
+      el.addEventListener('mouseleave', function(){ cur.classList.remove('big'); });
+    });
+  }
+
+  /* ===== Nav scroll state ===== */
+  var nav = document.getElementById('nav');
+  var scrollProg = document.getElementById('scroll-progress');
+  function onScroll(){
+    if(window.scrollY > 60){ nav.classList.add('scrolled'); }
+    else{ nav.classList.remove('scrolled'); }
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    scrollProg.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+
+  /* ===== Active nav link on scroll ===== */
+  var sections = ['work','services','whoweare','faq','contact'].map(function(id){ return document.getElementById(id); });
+  var navLinks = document.querySelectorAll('.nav-links a, #mobile-overlay a');
+  function updateActive(){
+    var pos = window.scrollY + window.innerHeight/2;
+    var current = null;
+    sections.forEach(function(sec){
+      if(sec && sec.offsetTop <= pos){ current = sec.id; }
+    });
+    navLinks.forEach(function(link){
+      var href = link.getAttribute('href').replace('#','');
+      link.classList.toggle('active', href === current);
+    });
+  }
+  window.addEventListener('scroll', updateActive);
+  updateActive();
+
+  /* ===== Mobile menu ===== */
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileOverlay = document.getElementById('mobile-overlay');
+  var mobileClose = document.getElementById('mobile-close');
+  function openMenu(){ mobileOverlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ mobileOverlay.classList.remove('open'); document.body.style.overflow=''; }
+  hamburgerBtn.addEventListener('click', openMenu);
+  mobileClose.addEventListener('click', closeMenu);
+  mobileOverlay.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  /* ===== Scroll reveal ===== */
+  var rvEls = document.querySelectorAll('.rv');
+  var rvObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('on');
+        rvObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  rvEls.forEach(function(el){ rvObserver.observe(el); });
+
+  /* ===== Stat count-up ===== */
+  function easeOut(t){ return 1-Math.pow(1-t,3); }
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var prefix = el.getAttribute('data-prefix') || '';
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1600;
+    var start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts-start)/duration, 1);
+      var eased = easeOut(progress);
+      var val = target * eased;
+      el.textContent = prefix + val.toFixed(decimals) + suffix;
+      if(progress < 1){ requestAnimationFrame(step); }
+      else{ el.textContent = prefix + target.toFixed(decimals) + suffix; }
+    }
+    requestAnimationFrame(step);
+  }
+  var statsGrid = document.getElementById('statsGrid');
+  if(statsGrid){
+    var statObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.querySelectorAll('.num[data-count]').forEach(animateCount);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    statObserver.observe(statsGrid);
+  }
+
+  /* ===== Contact form ===== */
+  var form = document.getElementById('contactForm');
+  var successMsg = document.getElementById('successMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var valid = true;
+    form.querySelectorAll('[required]').forEach(function(field){
+      if(!field.value.trim()){
+        field.classList.add('err');
+        valid = false;
+      } else {
+        field.classList.remove('err');
+      }
+    });
+    if(!valid) return;
+    form.style.display = 'none';
+    successMsg.style.display = 'block';
+  });
+  form.querySelectorAll('.field').forEach(function(field){
+    field.addEventListener('input', function(){ field.classList.remove('err'); });
+  });
+})();
+</script>
+</body>
+</html>
