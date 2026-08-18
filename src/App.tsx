@@ -219,8 +219,8 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
         <header className="pt-3 sm:pt-4 px-4 sm:px-6 w-full max-w-5xl mx-auto flex items-center justify-center">
           <div className="bg-white/95 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex items-center justify-between w-full border border-black/5 transition-all duration-300">
             {/* Active Theory Logo */}
-            <div className="flex items-center shrink-0 hover:scale-[1.02] transition-transform duration-200">
-              <ActiveTheoryLogo theme="dark" height={34} />
+            <div className="flex items-center shrink-0 hover:scale-[1.02] transition-transform duration-200 py-0.5">
+              <ActiveTheoryLogo theme="dark" height={44} />
             </div>
 
             {/* Desktop Navigation Links */}
