@@ -334,7 +334,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
         <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-20 sm:-mt-36 md:-mt-48 pb-12 max-w-5xl mx-auto">
 
           {/* Main Headline in Instrument Serif */}
-          <h1 className="text-[2.25rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.06] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
+          <h1 className="hero-headline text-[1.75rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
             Where bold brands<br />
             Meet Serious<br />
             <span className="text-[#1B133C]">Execution</span>.

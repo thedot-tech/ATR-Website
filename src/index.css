@@ -1492,4 +1492,9 @@
     padding: 20px 18px !important;
     border-radius: 20px !important;
   }
+
+  .hero-headline {
+    font-size: clamp(1.6rem, 7.2vw, 2.1rem) !important;
+    line-height: 1.12 !important;
+  }
 }
