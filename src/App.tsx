@@ -264,7 +264,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <section id="hero" className="relative w-full h-screen overflow-hidden flex flex-col justify-between">
+    <section id="hero" className="relative w-full h-screen h-dvh min-h-screen min-h-dvh overflow-hidden flex flex-col justify-between">
       {/* Background Video */}
       <video
         autoPlay
