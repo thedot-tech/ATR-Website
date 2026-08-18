@@ -9,6 +9,7 @@ import {
   SirpavanamLogo,
   FruitbaeLogo,
   MathiMobilesLogo,
+  SamsungLogo,
 } from './components/ClientLogos';
 
 // Start a Project Modal
@@ -210,18 +211,18 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
           inset: 0,
           zIndex: 0,
           width: '100%',
-          height: '130%',
+          height: '100%',
           objectFit: 'cover',
           objectPosition: 'center',
           pointerEvents: 'none',
+          filter: 'contrast(1.08) brightness(1.05)',
         }}
       />
 
-      {/* Dark tint overlay for visual depth and text readability */}
+      {/* Radial overlay tint: darker behind central text, crystal clear at edges for HD video */}
       <div
         style={{
-          background: 'rgba(13, 11, 20, 0.48)',
-          backdropFilter: 'blur(0.5px)',
+          background: 'radial-gradient(ellipse at center, rgba(13, 11, 20, 0.58) 0%, rgba(13, 11, 20, 0.25) 80%)',
           position: 'absolute',
           inset: 0,
           zIndex: 1,
@@ -233,65 +234,40 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
       <div className="relative z-10 flex flex-col h-full w-full justify-between">
         {/* Navigation Floating Glass Pill matching Image 2 */}
         <header className="pt-4 md:pt-6 px-4 sm:px-6 w-full max-w-6xl mx-auto flex items-center justify-center">
-          <div className="bg-[#171327]/85 backdrop-blur-md rounded-2xl px-5 md:px-7 py-3 shadow-lg flex items-center justify-between w-full border border-white/10">
+          <div className="bg-white/95 backdrop-blur-md rounded-2xl px-4 md:px-6 py-2.5 shadow-xl flex items-center justify-between w-full border border-black/10">
             {/* Active Theory Logo */}
-            <a href="#/" className="flex items-center gap-2.5 transition-opacity hover:opacity-90">
-              <ActiveTheoryLogo theme="light" height={52} />
-            </a>
+            <div className="flex items-center shrink-0">
+              <ActiveTheoryLogo theme="dark" height={44} />
+            </div>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center gap-7 lg:gap-8">
-              <a
-                href="#/work"
-                className="text-[14px] font-medium text-white/80 hover:text-white transition-colors"
-              >
+            {/* Desktop Navigation Links (Static non-clickable labels) */}
+            <nav className="hidden md:flex items-center gap-5 lg:gap-7 select-none">
+              <span className="text-xs lg:text-sm font-semibold text-slate-800 tracking-tight">
                 Work
-              </a>
-              <a
-                href="#services-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const target = document.getElementById('services-section');
-                  if (target) target.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="text-[14px] font-medium text-white/80 hover:text-white transition-colors flex items-center gap-1 cursor-pointer"
-              >
-                What We Do <span className="text-[10px] opacity-60">⌄</span>
-              </a>
-              <a
-                href="#verticals-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const target = document.getElementById('verticals-section');
-                  if (target) target.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="text-[14px] font-medium text-white/80 hover:text-white transition-colors flex items-center gap-1 cursor-pointer"
-              >
-                Industries <span className="text-[10px] opacity-60">⌄</span>
-              </a>
-              <a
-                href="#/studio"
-                className="text-[14px] font-medium text-white/80 hover:text-white transition-colors"
-              >
+              </span>
+              <span className="text-xs lg:text-sm font-semibold text-slate-800 flex items-center gap-1 tracking-tight">
+                What We Do <span className="text-[10px] opacity-70">⌄</span>
+              </span>
+              <span className="text-xs lg:text-sm font-semibold text-slate-800 flex items-center gap-1 tracking-tight">
+                Industries <span className="text-[10px] opacity-70">⌄</span>
+              </span>
+              <span className="text-xs lg:text-sm font-semibold text-slate-800 tracking-tight">
                 Studio
-              </a>
-              <a
-                href="#/contact"
-                className="text-[14px] font-medium text-white/80 hover:text-white transition-colors"
-              >
+              </span>
+              <span className="text-xs lg:text-sm font-semibold text-slate-800 tracking-tight">
                 Contact
-              </a>
+              </span>
             </nav>
 
             {/* Right Status & Action Button */}
-            <div className="flex items-center gap-4 sm:gap-6">
-              <div className="hidden sm:flex items-center gap-2 text-xs font-medium text-white/70 tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-[#CBF24C] animate-pulse"></span>
+            <div className="flex items-center gap-3 sm:gap-5 shrink-0">
+              <div className="hidden sm:flex items-center gap-2 text-xs font-bold text-slate-800 tracking-wide">
+                <span className="w-2 h-2 rounded-full bg-[#6ca300] animate-pulse"></span>
                 <span>BLR / CBE</span>
               </div>
               <button
                 onClick={onOpenProject}
-                className="rounded-full bg-[#CBF24C] px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#0D0B14] hover:bg-[#d8fa6d] transition-all duration-200 hover:-translate-y-0.5 cursor-pointer shadow-md"
+                className="rounded-full bg-[#CBF24C] px-4 py-2 text-xs sm:text-xs font-bold text-[#0D0B14] hover:bg-[#d8fa6d] transition-all duration-200 hover:-translate-y-0.5 cursor-pointer shadow-sm shrink-0"
               >
                 Start a Project
               </button>
@@ -300,52 +276,27 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
         </header>
 
         {/* Hero Centered Content matching Image 2 */}
-        <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto max-w-5xl mx-auto">
+        <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-20 sm:-mt-36 md:-mt-48 pb-12 max-w-5xl mx-auto">
           {/* Eyebrow Label */}
-          <p className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[#CBF24C] mb-4 sm:mb-6 flex items-center justify-center gap-2">
-            <span className="w-5 h-[2px] bg-[#CBF24C] opacity-80"></span>
+          <p className="text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase text-[#CBF24C] mb-4 sm:mb-6 flex items-center justify-center gap-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
             CREATIVE & AI AGENCY · BENGALURU + COIMBATORE
           </p>
 
           {/* Main Headline in Instrument Serif */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.96] tracking-[-0.03em] text-white font-serif-instrument font-normal text-center">
-            We design the brand.<br />
-            Then we build the<br />
-            <span className="text-[#CBF24C] font-normal">machine</span> behind it.
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] sm:leading-[0.96] tracking-[-0.03em] text-white font-serif-instrument font-medium text-center drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
+            Where bold brands<br className="hidden sm:inline" />{" "}
+            meet <span className="text-[#CBF24C] font-semibold drop-shadow-[0_2px_10px_rgba(203,242,76,0.25)]">serious execution</span>.
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-5 sm:mt-7 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-white/80 mx-auto font-sans-inter text-center">
-            Active Theory is a creative and AI agency in Bengaluru and Coimbatore. Identity, websites, performance campaigns, and the AI systems that make all three work harder.
-          </p>
-
-          {/* CTA Action Buttons */}
-          <div className="mt-7 sm:mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-            <button
-              onClick={onOpenProject}
-              className="rounded-full bg-[#CBF24C] px-7 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-[#0D0B14] shadow-[0px_4px_16px_rgba(203,242,76,0.25)] transition-all duration-300 hover:bg-[#d8fa6d] hover:-translate-y-0.5 cursor-pointer"
-            >
-              Start a Project
-            </button>
-            <a
-              href="#/work"
-              className="rounded-full bg-black/40 border border-white/25 backdrop-blur-sm px-7 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white hover:bg-white hover:text-[#0D0B14] transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-            >
-              See the Work
-            </a>
-          </div>
-
-          {/* Microcopy below buttons */}
-          <p className="mt-4 text-xs sm:text-sm text-white/55 font-sans-inter text-center">
-            No retainer to sign before you have seen how we think.
+          <p className="mt-5 sm:mt-7 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-white font-medium mx-auto font-sans-inter text-center drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
+            Strategy, branding, digital, performance and AI, connected by one senior team.
           </p>
         </div>
 
         {/* Bottom subtle marquee header */}
         <div className="pb-3 text-center">
-          <span className="text-[10px] uppercase tracking-[0.24em] text-white/40 font-semibold select-none">
-            BRANDS WE HAVE BUILT WITH
-          </span>
+
         </div>
       </div>
     </section>
@@ -355,7 +306,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState('/');
   const [activeFilter, setActiveFilter] = useState('all');
-  const [showCookie, setShowCookie] = useState(false);
+  const [showCookie, setShowCookie] = useState(true);
   const [isProjectOpen, setIsProjectOpen] = useState(false);
 
   // Form states
@@ -552,63 +503,59 @@ export default function App() {
             <ActiveTheoryHero onOpenProject={() => setIsProjectOpen(true)} />
 
             {/* MARQUEE LOGO STRIP WITH CLIENT LOGOS */}
-            <section className="bg-ink">
+            <section className="bg-[#F4F4F7] border-y border-black/10 py-6 overflow-hidden">
               <div className="strip">
-                <p className="strip-lbl">Brands we have built with</p>
-                <div className="marquee">
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <AudiLogo className="h-6 w-auto text-white" />
+                <div className="marquee gap-6">
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <AudiLogo className="h-6 w-auto text-black" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <JayaCoffeeLogo className="h-7 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <JayaCoffeeLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <BurgermanLogo className="h-5 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <BurgermanLogo className="h-9 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <RobotronicLogo className="h-7 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <RobotronicLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <ThreeDPrintingLogo className="h-8 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <ThreeDPrintingLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <SirpavanamLogo className="h-7 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <SirpavanamLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <FruitbaeLogo className="h-6 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <FruitbaeLogo className="h-9 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <MathiMobilesLogo className="h-7 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <MathiMobilesLogo className="h-10 w-auto" />
                   </div>
                   {/* Repeated set for infinite smooth marquee scrolling */}
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <AudiLogo className="h-6 w-auto text-white" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <AudiLogo className="h-6 w-auto text-black" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <JayaCoffeeLogo className="h-7 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <JayaCoffeeLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <BurgermanLogo className="h-5 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <BurgermanLogo className="h-9 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <RobotronicLogo className="h-7 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <RobotronicLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <ThreeDPrintingLogo className="h-8 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <ThreeDPrintingLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <SirpavanamLogo className="h-7 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <SirpavanamLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <FruitbaeLogo className="h-6 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <FruitbaeLogo className="h-9 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-13 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
-                    <MathiMobilesLogo className="h-7 w-auto" />
+                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                    <MathiMobilesLogo className="h-10 w-auto" />
                   </div>
                 </div>
-                <p className="strip-note">
-                  Working with developers, founders, and marketing teams across Karnataka, Tamil Nadu, and the Gulf since 2018.
-                </p>
               </div>
             </section>
 
@@ -648,9 +595,7 @@ export default function App() {
                 </div>
 
                 <div className="btn-row" style={{ marginTop: 32 }}>
-                  <a href="#/studio" className="tlink">
-                    More about the studio →
-                  </a>
+
                 </div>
               </div>
             </section>
@@ -714,9 +659,7 @@ export default function App() {
                       Naming, identity systems, typography, colour, tone of voice, and the guidelines that stop it all falling apart six months later. For new brands, and for old ones that stopped looking like themselves.
                     </p>
                     <div className="card-foot">
-                      <a href="#/branding" className="tlink">
-                        Explore Branding →
-                      </a>
+
                     </div>
                   </article>
 
@@ -727,9 +670,7 @@ export default function App() {
                       Sites that load fast, read clearly, and turn visitors into enquiries. Design, copy, build, and handover — including CMS training, so you are not emailing us to change a phone number. Project microsites, D2C storefronts, and SaaS marketing sites.
                     </p>
                     <div className="card-foot">
-                      <a href="#/web" className="tlink">
-                        Explore Web →
-                      </a>
+
                     </div>
                   </article>
 
@@ -740,9 +681,7 @@ export default function App() {
                       Meta, Google, and LinkedIn run against pipeline, not impressions. Creative and media sit in the same team, which is the only reason performance creative ever gets good. You see the account, the spend, and the losses.
                     </p>
                     <div className="card-foot">
-                      <a href="#/performance" className="tlink">
-                        Explore Performance →
-                      </a>
+
                     </div>
                   </article>
 
@@ -753,9 +692,7 @@ export default function App() {
                       Lead qualification agents, WhatsApp assistants that respond in nine seconds instead of nine hours, internal tools, and AI search visibility. We build the systems, not slide decks about them.
                     </p>
                     <div className="card-foot">
-                      <a href="#/ai" className="tlink">
-                        Explore AI →
-                      </a>
+
                     </div>
                   </article>
                 </div>
@@ -789,9 +726,7 @@ export default function App() {
                         Launches measured in qualified site visits, not vanity leads. 3D visualisers, project microsites, performance creative that sells inventory without discounting, and post-enquiry AI agents that follow up before the lead goes cold.
                       </p>
                       <div className="card-foot">
-                        <a href="#/real-estate" className="tlink">
-                          Real Estate Work →
-                        </a>
+
                       </div>
                     </div>
                   </article>
@@ -804,9 +739,7 @@ export default function App() {
                         Packaging that earns shelf space and unboxing videos. Always-on creative pipelines that keep Meta fatigue away. ROAS that lets you scale ad spend without losing money on unit economics.
                       </p>
                       <div className="card-foot">
-                        <a href="#/d2c" className="tlink">
-                          D2C Work →
-                        </a>
+
                       </div>
                     </div>
                   </article>
@@ -819,9 +752,7 @@ export default function App() {
                         Positioning that makes clear what you actually do in five seconds. Marketing sites built for search and conversions. Pipeline generation that speaks to developers, buyers, or CFOs with the right vocabulary.
                       </p>
                       <div className="card-foot">
-                        <a href="#/saas" className="tlink">
-                          SaaS Work →
-                        </a>
+
                       </div>
                     </div>
                   </article>
@@ -838,40 +769,52 @@ export default function App() {
                 </div>
 
                 <div className="grid-3" style={{ marginTop: 44 }}>
-                  <article className="quote">
-                    <p className="quote-t">
-                      Active Theory has helped us achieve excellent sales outcomes for our e-commerce platform, Sirpavanam. They are a highly experienced team who focus on finding the right solutions and delivering result-oriented outcomes. We truly appreciate their approach and commitment.
-                    </p>
-                    <div className="quote-who">
-                      <span className="avatar">SP</span>
-                      <div>
-                        <div className="quote-n">Sirpavanam</div>
-                        <div className="quote-r">E-Commerce Platform</div>
+                  <article className="quote flex flex-col justify-between p-6 bg-white rounded-2xl border border-black/10 shadow-sm">
+                    <div>
+                      <p className="quote-t">
+                        Active Theory has helped us achieve excellent sales outcomes for our e-commerce platform, Sirpavanam. They are a highly experienced team who focus on finding the right solutions and delivering result-oriented outcomes. We truly appreciate their approach and commitment.
+                      </p>
+                    </div>
+                    <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between gap-4">
+                      <div className="quote-who flex items-center gap-3">
+                        <div>
+                          <div className="quote-n font-bold text-black">Sirpavanam</div>
+                          <div className="quote-r text-xs text-black/60">E-Commerce Platform</div>
+                        </div>
                       </div>
+                      <SirpavanamLogo className="h-14 w-auto shrink-0" />
                     </div>
                   </article>
-                  <article className="quote">
-                    <p className="quote-t">
-                      Robotronic has been partnering with Active Theory for over 4 years, and we are extremely happy with the association. Their coordination, timely execution, and result-oriented solutions are something we are truly grateful for.
-                    </p>
-                    <div className="quote-who">
-                      <span className="avatar">RT</span>
-                      <div>
-                        <div className="quote-n">Robotronic</div>
-                        <div className="quote-r">Technology Partner</div>
+                  <article className="quote flex flex-col justify-between p-6 bg-white rounded-2xl border border-black/10 shadow-sm">
+                    <div>
+                      <p className="quote-t">
+                        Robotronic has been partnering with Active Theory for over 4 years, and we are extremely happy with the association. Their coordination, timely execution, and result-oriented solutions are something we are truly grateful for.
+                      </p>
+                    </div>
+                    <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between gap-4">
+                      <div className="quote-who flex items-center gap-3">
+                        <div>
+                          <div className="quote-n font-bold text-black">Robotronic</div>
+                          <div className="quote-r text-xs text-black/60">Technology Partner</div>
+                        </div>
                       </div>
+                      <RobotronicLogo className="h-14 w-auto shrink-0" />
                     </div>
                   </article>
-                  <article className="quote">
-                    <p className="quote-t">
-                      Active Theory helped us create a unique and special brand identity for our exclusive Samsung showroom. The overall branding beautifully represented the next-level vision we had for our company. We are very happy with the outcome and their creative approach.
-                    </p>
-                    <div className="quote-who">
-                      <span className="avatar">SS</span>
-                      <div>
-                        <div className="quote-n">Exclusive Samsung Showroom</div>
-                        <div className="quote-r">Retail & Brand Identity</div>
+                  <article className="quote flex flex-col justify-between p-6 bg-white rounded-2xl border border-black/10 shadow-sm">
+                    <div>
+                      <p className="quote-t">
+                        Active Theory helped us create a unique and special brand identity for our exclusive Samsung showroom. The overall branding beautifully represented the next-level vision we had for our company. We are very happy with the outcome and their creative approach.
+                      </p>
+                    </div>
+                    <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between gap-4">
+                      <div className="quote-who flex items-center gap-3">
+                        <div>
+                          <div className="quote-n font-bold text-black">Exclusive Samsung Showroom</div>
+                          <div className="quote-r text-xs text-black/60">Retail & Brand Identity</div>
+                        </div>
                       </div>
+                      <MathiMobilesLogo className="h-14 w-auto shrink-0" />
                     </div>
                   </article>
                 </div>
@@ -1533,16 +1476,36 @@ export default function App() {
         </div>
       </footer>
 
-      {/* COOKIE BANNER */}
+      {/* FLOATING COOKIE CONSENT POP-UP AT BOTTOM */}
       {showCookie && (
-        <div className="cookie" id="cookie">
-          <p>We use cookies to analyze site performance and optimize your digital experience.</p>
-          <div className="btn-row">
-            <button className="btn btn-lime btn-sm" onClick={() => setShowCookie(false)}>
-              Got it
+        <div className="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 bg-[#171327]/95 backdrop-blur-xl border border-white/20 text-white p-5 rounded-2xl shadow-2xl animate-fadeIn flex flex-col gap-3">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2 text-[#CBF24C] font-semibold text-sm">
+              <span className="text-base">🍪</span> Cookie Settings
+            </div>
+            <button
+              onClick={() => setShowCookie(false)}
+              className="text-white/60 hover:text-white text-xs font-bold w-6 h-6 rounded-full bg-white/10 flex items-center justify-center cursor-pointer transition-colors"
+              aria-label="Close cookies"
+            >
+              ✕
             </button>
-            <button className="btn btn-line-d btn-sm" onClick={() => setShowCookie(false)}>
-              Details
+          </div>
+          <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-sans-inter">
+            We use cookies to analyze site performance and optimize your digital experience.
+          </p>
+          <div className="flex items-center gap-3 pt-1">
+            <button
+              onClick={() => setShowCookie(false)}
+              className="flex-1 rounded-xl bg-[#CBF24C] py-2 px-4 text-xs sm:text-sm font-bold text-[#0D0B14] hover:bg-[#d8fa6d] transition-all cursor-pointer text-center shadow-md"
+            >
+              Accept Cookies
+            </button>
+            <button
+              onClick={() => setShowCookie(false)}
+              className="rounded-xl bg-white/10 border border-white/15 py-2 px-4 text-xs sm:text-sm font-semibold text-white hover:bg-white/20 transition-all cursor-pointer"
+            >
+              Decline
             </button>
           </div>
         </div>
