@@ -1457,3 +1457,39 @@
     padding: 34px 24px;
   }
 }
+
+/* Mobile Responsiveness Polish */
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+  }
+
+  .grid-2, .grid-3, .grid-4, .grid-2x2 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .stat {
+    padding: 24px 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .stat-n {
+    font-size: 2.2rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .stat-l {
+    font-size: 0.9rem !important;
+  }
+
+  .stat-w {
+    font-size: 0.78rem !important;
+  }
+
+  .quote {
+    padding: 20px 18px !important;
+    border-radius: 20px !important;
+  }
+}
