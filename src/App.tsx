@@ -216,41 +216,41 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
       {/* Hero Content & Floating Navigation Layer */}
       <div className="relative z-10 flex flex-col h-full w-full justify-between">
         {/* Navigation Floating Glass Pill with Ultra-Clean Glassmorphism */}
-        <header className="pt-4 md:pt-6 px-4 sm:px-6 w-full max-w-6xl mx-auto flex items-center justify-center">
-          <div className="bg-white/90 backdrop-blur-xl rounded-[26px] px-6 md:px-8 py-3 shadow-[0_12px_40px_rgba(0,0,0,0.12),0_1px_3px_rgba(0,0,0,0.05)] flex items-center justify-between w-full border border-white/70 ring-1 ring-black/5 transition-all duration-300">
+        <header className="pt-3 sm:pt-4 px-4 sm:px-6 w-full max-w-5xl mx-auto flex items-center justify-center">
+          <div className="bg-white/95 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex items-center justify-between w-full border border-black/5 transition-all duration-300">
             {/* Active Theory Logo */}
             <div className="flex items-center shrink-0 hover:scale-[1.02] transition-transform duration-200">
-              <ActiveTheoryLogo theme="dark" height={64} />
+              <ActiveTheoryLogo theme="dark" height={34} />
             </div>
 
-            {/* Desktop Navigation Links - Larger Font & Perfect Alignment */}
-            <nav className="hidden md:flex items-center gap-7 lg:gap-9 select-none">
-              <span className="text-[15px] lg:text-base font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
+            {/* Desktop Navigation Links */}
+            <nav className="hidden md:flex items-center gap-6 lg:gap-8 select-none">
+              <span className="text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
                 Work
               </span>
-              <span className="group text-[15px] lg:text-base font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer flex items-center gap-1.5 tracking-tight">
+              <span className="group text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer flex items-center gap-1 tracking-tight">
                 What We Do{" "}
-                <span className="text-[10px] text-[#1B133C]/70 group-hover:translate-y-0.5 transition-transform duration-200">
+                <span className="text-[9px] text-[#1B133C]/70 group-hover:translate-y-0.5 transition-transform duration-200">
                   ▼
                 </span>
               </span>
-              <span className="group text-[15px] lg:text-base font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer flex items-center gap-1.5 tracking-tight">
+              <span className="group text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer flex items-center gap-1 tracking-tight">
                 Industries{" "}
-                <span className="text-[10px] text-[#1B133C]/70 group-hover:translate-y-0.5 transition-transform duration-200">
+                <span className="text-[9px] text-[#1B133C]/70 group-hover:translate-y-0.5 transition-transform duration-200">
                   ▼
                 </span>
               </span>
-              <span className="text-[15px] lg:text-base font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
+              <span className="text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
                 Studio
               </span>
-              <span className="text-[15px] lg:text-base font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
+              <span className="text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
                 Contact
               </span>
             </nav>
 
             {/* Right Status & Action Button */}
-            <div className="flex items-center gap-4 sm:gap-6 shrink-0">
-              <div className="hidden sm:flex items-center gap-2 bg-[#1B133C]/5 border border-[#1B133C]/10 rounded-full px-3.5 py-1.5 text-xs font-bold text-[#1B133C] tracking-wide">
+            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+              <div className="hidden sm:flex items-center gap-1.5 bg-[#1B133C]/5 border border-[#1B133C]/10 rounded-full px-3 py-1 text-[11px] font-bold text-[#1B133C] tracking-wide">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6ca300] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#6ca300]"></span>
@@ -259,7 +259,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
               </div>
               <button
                 onClick={onOpenProject}
-                className="rounded-full bg-[#CBF24C] hover:bg-[#d8fa6d] px-6 py-2.5 text-xs sm:text-sm font-bold text-[#0D0B14] shadow-[0_4px_14px_rgba(203,242,76,0.4)] hover:shadow-[0_6px_20px_rgba(203,242,76,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer shrink-0"
+                className="rounded-full bg-[#CBF24C] hover:bg-[#d8fa6d] px-4 sm:px-5 py-1.5 sm:py-2 text-xs font-bold text-[#0D0B14] shadow-[0_4px_12px_rgba(203,242,76,0.35)] hover:shadow-[0_6px_16px_rgba(203,242,76,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer shrink-0"
               >
                 Start a Project
               </button>
