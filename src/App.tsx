@@ -759,53 +759,47 @@ export default function App() {
                   <h2 className="h2">What founders and CMOs say about working with Active Theory.</h2>
                 </div>
 
-                <div className="grid-3" style={{ marginTop: 44 }}>
-                  <article className="quote flex flex-col justify-between p-6 bg-white rounded-2xl border border-black/10 shadow-sm">
-                    <div>
-                      <p className="quote-t">
+                <div className="grid-3 items-stretch" style={{ marginTop: 44 }}>
+                  <article className="quote h-full flex flex-col justify-between p-6 lg:p-8 bg-white rounded-3xl border border-black/10 shadow-sm">
+                    <div className="flex-1 flex flex-col justify-between">
+                      <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6">
                         Active Theory has helped us achieve excellent sales outcomes for our e-commerce platform, Sirpavanam. They are a highly experienced team who focus on finding the right solutions and delivering result-oriented outcomes. We truly appreciate their approach and commitment.
                       </p>
                     </div>
-                    <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between gap-4">
-                      <div className="quote-who flex items-center gap-3">
-                        <div>
-                          <div className="quote-n font-bold text-black">Sirpavanam</div>
-                          <div className="quote-r text-xs text-black/60">E-Commerce Platform</div>
-                        </div>
+                    <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
+                      <div className="quote-who">
+                        <div className="quote-n font-bold text-black text-sm">Sirpavanam</div>
+                        <div className="quote-r text-xs text-black/60 font-medium mt-0.5">E-Commerce Platform</div>
                       </div>
-                      <SirpavanamLogo className="h-14 w-auto shrink-0" />
+                      <SirpavanamLogo className="h-10 lg:h-12 w-auto max-w-[140px] object-contain shrink-0" />
                     </div>
                   </article>
-                  <article className="quote flex flex-col justify-between p-6 bg-white rounded-2xl border border-black/10 shadow-sm">
-                    <div>
-                      <p className="quote-t">
+                  <article className="quote h-full flex flex-col justify-between p-6 lg:p-8 bg-white rounded-3xl border border-black/10 shadow-sm">
+                    <div className="flex-1 flex flex-col justify-between">
+                      <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6">
                         Robotronic has been partnering with Active Theory for over 4 years, and we are extremely happy with the association. Their coordination, timely execution, and result-oriented solutions are something we are truly grateful for.
                       </p>
                     </div>
-                    <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between gap-4">
-                      <div className="quote-who flex items-center gap-3">
-                        <div>
-                          <div className="quote-n font-bold text-black">Robotronic</div>
-                          <div className="quote-r text-xs text-black/60">Technology Partner</div>
-                        </div>
+                    <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
+                      <div className="quote-who">
+                        <div className="quote-n font-bold text-black text-sm">Robotronic</div>
+                        <div className="quote-r text-xs text-black/60 font-medium mt-0.5">Technology Partner</div>
                       </div>
-                      <RobotronicLogo className="h-14 w-auto shrink-0" />
+                      <RobotronicLogo className="h-10 lg:h-12 w-auto max-w-[140px] object-contain shrink-0" />
                     </div>
                   </article>
-                  <article className="quote flex flex-col justify-between p-6 bg-white rounded-2xl border border-black/10 shadow-sm">
-                    <div>
-                      <p className="quote-t">
+                  <article className="quote h-full flex flex-col justify-between p-6 lg:p-8 bg-white rounded-3xl border border-black/10 shadow-sm">
+                    <div className="flex-1 flex flex-col justify-between">
+                      <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6">
                         Active Theory helped us create a unique and special brand identity for our exclusive Samsung showroom. The overall branding beautifully represented the next-level vision we had for our company. We are very happy with the outcome and their creative approach.
                       </p>
                     </div>
-                    <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between gap-4">
-                      <div className="quote-who flex items-center gap-3">
-                        <div>
-                          <div className="quote-n font-bold text-black">Exclusive Samsung Showroom</div>
-                          <div className="quote-r text-xs text-black/60">Retail & Brand Identity</div>
-                        </div>
+                    <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
+                      <div className="quote-who">
+                        <div className="quote-n font-bold text-black text-sm">Exclusive Samsung Showroom</div>
+                        <div className="quote-r text-xs text-black/60 font-medium mt-0.5">Retail & Brand Identity</div>
                       </div>
-                      <MathiMobilesLogo className="h-14 w-auto shrink-0" />
+                      <MathiMobilesLogo className="h-10 lg:h-12 w-auto max-w-[140px] object-contain shrink-0" />
                     </div>
                   </article>
                 </div>
