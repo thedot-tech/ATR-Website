@@ -1,13 +1,14 @@
 import React from 'react';
 
 // Image paths from static public/assets folder
-const sirpavanamImg = '/assets/sirpavanam.jpeg';
-const fruitbaeImg = '/assets/fruitbae.jpeg';
-const mathiMobilesImg = '/assets/mathi mobiles.jpeg';
-const jayaCoffeeImg = '/assets/jaya coffee.jpeg';
-const burgermanImg = '/assets/burgerman.jpeg';
-const robotronicImg = '/assets/robotronic.jpeg';
-const threeDPrintingImg = '/assets/3d printing.jpeg';
+const sirpavanamImg = '/assets/sirpavanam.png';
+const mathiMobilesImg = '/assets/mathi mobiles.png';
+const jayaCoffeeImg = '/assets/jaya coffee.png';
+const robotronicImg = '/assets/robotronic.png';
+const threeDPrintingImg = '/assets/3d ong.png';
+const siemensImg = '/assets/siemens.png';
+const shanthiGearsImg = '/assets/shanthi gears.png';
+const burgerKingImg = '/assets/burger king.png';
 
 // 1. Audi 4 Interlocking Rings Logo
 export const AudiLogo: React.FC<{ className?: string }> = ({ className = 'h-7 w-auto' }) => (
@@ -28,16 +29,34 @@ export const JayaCoffeeLogo: React.FC<{ className?: string }> = ({ className = '
   />
 );
 
-// 3. Burgerman Logo
-export const BurgermanLogo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
+// 3. Siemens Logo
+export const SiemensLogo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
   <img
-    src={burgermanImg}
-    alt="Burgerman"
-    className={`object-contain max-h-full max-w-full rounded ${className}`}
+    src={siemensImg}
+    alt="Siemens"
+    className={`object-contain max-h-full max-w-full ${className}`}
   />
 );
 
-// 4. Robotronic Logo
+// 4. Shanthi Gears Logo
+export const ShanthiGearsLogo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
+  <img
+    src={shanthiGearsImg}
+    alt="Shanthi Gears"
+    className={`object-contain max-h-full max-w-full ${className}`}
+  />
+);
+
+// 5. Burger King Logo
+export const BurgerKingLogo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
+  <img
+    src={burgerKingImg}
+    alt="Burger King"
+    className={`object-contain max-h-full max-w-full ${className}`}
+  />
+);
+
+// 6. Robotronic Logo
 export const RobotronicLogo: React.FC<{ className?: string; textColor?: string }> = ({
   className = 'h-10 w-auto',
 }) => (
@@ -48,7 +67,7 @@ export const RobotronicLogo: React.FC<{ className?: string; textColor?: string }
   />
 );
 
-// 5. The 3D Printing Company Logo
+// 7. The 3D Printing Company Logo
 export const ThreeDPrintingLogo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
   <img
     src={threeDPrintingImg}
@@ -57,7 +76,7 @@ export const ThreeDPrintingLogo: React.FC<{ className?: string }> = ({ className
   />
 );
 
-// 6. Sirpavanam Logo
+// 8. Sirpavanam Logo
 export const SirpavanamLogo: React.FC<{ className?: string; textColor?: string }> = ({
   className = 'h-10 w-auto',
 }) => (
@@ -68,16 +87,7 @@ export const SirpavanamLogo: React.FC<{ className?: string; textColor?: string }
   />
 );
 
-// 7. Fruitbae Logo
-export const FruitbaeLogo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
-  <img
-    src={fruitbaeImg}
-    alt="Fruitbae"
-    className={`object-contain max-h-full max-w-full rounded ${className}`}
-  />
-);
-
-// 8. Mathi Mobiles Logo
+// 9. Mathi Mobiles Logo
 export const MathiMobilesLogo: React.FC<{ className?: string; textColor?: string }> = ({
   className = 'h-10 w-auto',
 }) => (

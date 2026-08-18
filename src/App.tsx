@@ -3,11 +3,12 @@ import ActiveTheoryLogo from './components/ActiveTheoryLogo';
 import {
   AudiLogo,
   JayaCoffeeLogo,
-  BurgermanLogo,
+  SiemensLogo,
+  ShanthiGearsLogo,
+  BurgerKingLogo,
   RobotronicLogo,
   ThreeDPrintingLogo,
   SirpavanamLogo,
-  FruitbaeLogo,
   MathiMobilesLogo,
   SamsungLogo,
 } from './components/ClientLogos';
@@ -206,68 +207,59 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
         loop
         playsInline
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260714_113715_c7e0daa0-8bdd-4486-a2da-040901f8f0ea.mp4"
+        className="absolute inset-0 z-0 w-full h-[130%] object-cover object-top pointer-events-none"
         style={{
-          position: 'absolute',
-          inset: 0,
-          zIndex: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          objectPosition: 'center',
-          pointerEvents: 'none',
-          filter: 'contrast(1.08) brightness(1.05)',
-        }}
-      />
-
-      {/* Radial overlay tint: darker behind central text, crystal clear at edges for HD video */}
-      <div
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(13, 11, 20, 0.58) 0%, rgba(13, 11, 20, 0.25) 80%)',
-          position: 'absolute',
-          inset: 0,
-          zIndex: 1,
-          pointerEvents: 'none',
+          filter: 'none',
         }}
       />
 
       {/* Hero Content & Floating Navigation Layer */}
       <div className="relative z-10 flex flex-col h-full w-full justify-between">
-        {/* Navigation Floating Glass Pill matching Image 2 */}
+        {/* Navigation Floating Glass Pill with Ultra-Clean Glassmorphism */}
         <header className="pt-4 md:pt-6 px-4 sm:px-6 w-full max-w-6xl mx-auto flex items-center justify-center">
-          <div className="bg-white/95 backdrop-blur-md rounded-2xl px-4 md:px-6 py-2.5 shadow-xl flex items-center justify-between w-full border border-black/10">
+          <div className="bg-white/90 backdrop-blur-xl rounded-[26px] px-6 md:px-8 py-3 shadow-[0_12px_40px_rgba(0,0,0,0.12),0_1px_3px_rgba(0,0,0,0.05)] flex items-center justify-between w-full border border-white/70 ring-1 ring-black/5 transition-all duration-300">
             {/* Active Theory Logo */}
-            <div className="flex items-center shrink-0">
-              <ActiveTheoryLogo theme="dark" height={44} />
+            <div className="flex items-center shrink-0 hover:scale-[1.02] transition-transform duration-200">
+              <ActiveTheoryLogo theme="dark" height={64} />
             </div>
 
-            {/* Desktop Navigation Links (Static non-clickable labels) */}
-            <nav className="hidden md:flex items-center gap-5 lg:gap-7 select-none">
-              <span className="text-xs lg:text-sm font-semibold text-slate-800 tracking-tight">
+            {/* Desktop Navigation Links - Larger Font & Perfect Alignment */}
+            <nav className="hidden md:flex items-center gap-7 lg:gap-9 select-none">
+              <span className="text-[15px] lg:text-base font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
                 Work
               </span>
-              <span className="text-xs lg:text-sm font-semibold text-slate-800 flex items-center gap-1 tracking-tight">
-                What We Do <span className="text-[10px] opacity-70">⌄</span>
+              <span className="group text-[15px] lg:text-base font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer flex items-center gap-1.5 tracking-tight">
+                What We Do{" "}
+                <span className="text-[10px] text-[#1B133C]/70 group-hover:translate-y-0.5 transition-transform duration-200">
+                  ▼
+                </span>
               </span>
-              <span className="text-xs lg:text-sm font-semibold text-slate-800 flex items-center gap-1 tracking-tight">
-                Industries <span className="text-[10px] opacity-70">⌄</span>
+              <span className="group text-[15px] lg:text-base font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer flex items-center gap-1.5 tracking-tight">
+                Industries{" "}
+                <span className="text-[10px] text-[#1B133C]/70 group-hover:translate-y-0.5 transition-transform duration-200">
+                  ▼
+                </span>
               </span>
-              <span className="text-xs lg:text-sm font-semibold text-slate-800 tracking-tight">
+              <span className="text-[15px] lg:text-base font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
                 Studio
               </span>
-              <span className="text-xs lg:text-sm font-semibold text-slate-800 tracking-tight">
+              <span className="text-[15px] lg:text-base font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
                 Contact
               </span>
             </nav>
 
             {/* Right Status & Action Button */}
-            <div className="flex items-center gap-3 sm:gap-5 shrink-0">
-              <div className="hidden sm:flex items-center gap-2 text-xs font-bold text-slate-800 tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-[#6ca300] animate-pulse"></span>
+            <div className="flex items-center gap-4 sm:gap-6 shrink-0">
+              <div className="hidden sm:flex items-center gap-2 bg-[#1B133C]/5 border border-[#1B133C]/10 rounded-full px-3.5 py-1.5 text-xs font-bold text-[#1B133C] tracking-wide">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6ca300] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#6ca300]"></span>
+                </span>
                 <span>BLR / CBE</span>
               </div>
               <button
                 onClick={onOpenProject}
-                className="rounded-full bg-[#CBF24C] px-4 py-2 text-xs sm:text-xs font-bold text-[#0D0B14] hover:bg-[#d8fa6d] transition-all duration-200 hover:-translate-y-0.5 cursor-pointer shadow-sm shrink-0"
+                className="rounded-full bg-[#CBF24C] hover:bg-[#d8fa6d] px-6 py-2.5 text-xs sm:text-sm font-bold text-[#0D0B14] shadow-[0_4px_14px_rgba(203,242,76,0.4)] hover:shadow-[0_6px_20px_rgba(203,242,76,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer shrink-0"
               >
                 Start a Project
               </button>
@@ -277,19 +269,15 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
 
         {/* Hero Centered Content matching Image 2 */}
         <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-20 sm:-mt-36 md:-mt-48 pb-12 max-w-5xl mx-auto">
-          {/* Eyebrow Label */}
-          <p className="text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase text-[#CBF24C] mb-4 sm:mb-6 flex items-center justify-center gap-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-            CREATIVE & AI AGENCY · BENGALURU + COIMBATORE
-          </p>
 
           {/* Main Headline in Instrument Serif */}
-          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] sm:leading-[0.96] tracking-[-0.03em] text-white font-serif-instrument font-medium text-center drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
             Where bold brands<br className="hidden sm:inline" />{" "}
-            meet <span className="text-[#CBF24C] font-semibold drop-shadow-[0_2px_10px_rgba(203,242,76,0.25)]">serious execution</span>.
+            meet <span className="text-[#1B133C] font-bold">serious execution</span>.
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-5 sm:mt-7 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-white font-medium mx-auto font-sans-inter text-center drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
+          <p className="mt-5 sm:mt-7 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-[#1B133C]/80 font-medium mx-auto font-sans-inter text-center">
             Strategy, branding, digital, performance and AI, connected by one senior team.
           </p>
         </div>
@@ -502,58 +490,66 @@ export default function App() {
             {/* HERO SECTION MATCHING IMAGE 2 */}
             <ActiveTheoryHero onOpenProject={() => setIsProjectOpen(true)} />
 
-            {/* MARQUEE LOGO STRIP WITH CLIENT LOGOS */}
-            <section className="bg-[#F4F4F7] border-y border-black/10 py-6 overflow-hidden">
+            {/* MARQUEE LOGO STRIP WITH CLIENT PNG LOGOS ON LIGHT BACKGROUND */}
+            <section className="bg-[#F4F4F7] border-y border-black/10 py-6 overflow-hidden select-none">
               <div className="strip">
-                <div className="marquee gap-6">
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <AudiLogo className="h-6 w-auto text-black" />
+                <div className="marquee gap-6 items-center">
+                  {/* Set 1 */}
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
+                    <AudiLogo className="h-7 w-auto text-black" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
+                    <SiemensLogo className="h-9 w-auto" />
+                  </div>
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
+                    <ShanthiGearsLogo className="h-10 w-auto" />
+                  </div>
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
+                    <BurgerKingLogo className="h-11 w-auto" />
+                  </div>
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
                     <JayaCoffeeLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <BurgermanLogo className="h-9 w-auto" />
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
+                    <RobotronicLogo className="h-11 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <RobotronicLogo className="h-10 w-auto" />
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
+                    <ThreeDPrintingLogo className="h-11 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <ThreeDPrintingLogo className="h-10 w-auto" />
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
+                    <SirpavanamLogo className="h-11 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <SirpavanamLogo className="h-10 w-auto" />
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
+                    <MathiMobilesLogo className="h-11 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <FruitbaeLogo className="h-9 w-auto" />
+
+                  {/* Set 2 (Identical Duplicate for Infinite Seamless Marquee Loop) */}
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
+                    <AudiLogo className="h-7 w-auto text-black" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <MathiMobilesLogo className="h-10 w-auto" />
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
+                    <SiemensLogo className="h-9 w-auto" />
                   </div>
-                  {/* Repeated set for infinite smooth marquee scrolling */}
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <AudiLogo className="h-6 w-auto text-black" />
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
+                    <ShanthiGearsLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
+                    <BurgerKingLogo className="h-11 w-auto" />
+                  </div>
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
                     <JayaCoffeeLogo className="h-10 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <BurgermanLogo className="h-9 w-auto" />
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
+                    <RobotronicLogo className="h-11 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <RobotronicLogo className="h-10 w-auto" />
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
+                    <ThreeDPrintingLogo className="h-11 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <ThreeDPrintingLogo className="h-10 w-auto" />
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
+                    <SirpavanamLogo className="h-11 w-auto" />
                   </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <SirpavanamLogo className="h-10 w-auto" />
-                  </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <FruitbaeLogo className="h-9 w-auto" />
-                  </div>
-                  <div className="logo-slot px-5 h-16 bg-white rounded-xl border border-black/15 flex items-center justify-center shadow-sm shrink-0 min-w-[140px] max-w-[200px]">
-                    <MathiMobilesLogo className="h-10 w-auto" />
+                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
+                    <MathiMobilesLogo className="h-11 w-auto" />
                   </div>
                 </div>
               </div>
@@ -653,21 +649,21 @@ export default function App() {
 
                 <div className="grid-2x2" style={{ marginTop: 44 }}>
                   <article className="card card-t-violet">
-                    <div className="card-idx">01 / Brand</div>
-                    <h3 className="h3">Brand Identity & Rebranding</h3>
+                    <div className="card-idx">01 / Idea to Product</div>
+                    <h3 className="h3">From Idea to Product</h3>
                     <p className="card-p">
-                      Naming, identity systems, typography, colour, tone of voice, and the guidelines that stop it all falling apart six months later. For new brands, and for old ones that stopped looking like themselves.
+                      Turning early stage ideas into real, market ready products. We help shape the concept, define the experience, build the product, and create everything needed to take it from an idea on paper to something people can actually use.
                     </p>
                     <div className="card-foot">
 
                     </div>
                   </article>
 
-                  <article className="card card-t-sky">
-                    <div className="card-idx">02 / Web</div>
-                    <h3 className="h3">Web Design & Development</h3>
+                  <article className="card card-t-lime">
+                    <div className="card-idx">02 / AI</div>
+                    <h3 className="h3">AI Development</h3>
                     <p className="card-p">
-                      Sites that load fast, read clearly, and turn visitors into enquiries. Design, copy, build, and handover — including CMS training, so you are not emailing us to change a phone number. Project microsites, D2C storefronts, and SaaS marketing sites.
+                      Lead qualification agents, WhatsApp assistants that respond in nine seconds instead of nine hours, internal tools, and AI search visibility. We build the systems, not slide decks about them.
                     </p>
                     <div className="card-foot">
 
@@ -685,11 +681,11 @@ export default function App() {
                     </div>
                   </article>
 
-                  <article className="card card-t-lime">
-                    <div className="card-idx">04 / AI</div>
-                    <h3 className="h3">AI Development</h3>
+                  <article className="card card-t-sky">
+                    <div className="card-idx">04 / Web</div>
+                    <h3 className="h3">Web Design & Development</h3>
                     <p className="card-p">
-                      Lead qualification agents, WhatsApp assistants that respond in nine seconds instead of nine hours, internal tools, and AI search visibility. We build the systems, not slide decks about them.
+                      Sites that load fast, read clearly, and turn visitors into enquiries. Design, copy, build, and handover — including CMS training, so you are not emailing us to change a phone number. Project microsites, D2C storefronts, and SaaS marketing sites.
                     </p>
                     <div className="card-foot">
 
@@ -912,9 +908,6 @@ export default function App() {
                     <button onClick={() => setIsProjectOpen(true)} className="btn btn-ink cursor-pointer">
                       Start a Project
                     </button>
-                    <a href="tel:+918045678900" className="btn btn-line-d">
-                      +91 80 4567 8900
-                    </a>
                   </div>
                   <p className="cta-foot">
                     Average response time: under 4 hours on business days. Bengaluru and Coimbatore time.
@@ -1342,7 +1335,6 @@ export default function App() {
                       </button>
                       <div className="text-sm text-[#A49DBC] space-y-1">
                         <p className="hover:text-white transition-colors"><a href="mailto:hello@activetheory.in">hello@activetheory.in</a></p>
-                        <p>+91 80 4567 8900</p>
                       </div>
                     </div>
 
@@ -1406,7 +1398,7 @@ export default function App() {
           <div className="ftr-top">
             <div className="ftr-brand">
               <a href="#/" className="inline-block mb-4 transition-opacity hover:opacity-85">
-                <ActiveTheoryLogo theme="light" height={58} />
+                <ActiveTheoryLogo theme="light" height={80} />
               </a>
               <p>A creative and AI agency in Bengaluru and Coimbatore. Identity, websites, performance campaigns, and the AI systems that make all three work harder.</p>
               <div className="btn-row" style={{ marginTop: 22 }}>
