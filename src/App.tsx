@@ -10,6 +10,7 @@ import {
   ThreeDPrintingLogo,
   SirpavanamLogo,
   NolaOn5thLogo,
+  MathiMobilesLogo,
   SamsungLogo,
 } from './components/ClientLogos';
 
@@ -903,7 +904,7 @@ export default function App() {
                       <div className="quote-who">
                         <div className="quote-r text-xs text-black/60 font-medium tracking-wide">Retail & Brand Identity</div>
                       </div>
-                      <NolaOn5thLogo className="h-9 sm:h-10 md:h-11 w-auto max-w-[140px] object-contain shrink-0 text-black" />
+                      <MathiMobilesLogo className="h-9 sm:h-10 md:h-11 w-auto max-w-[140px] object-contain shrink-0" />
                     </div>
                   </article>
                 </div>
