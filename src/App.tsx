@@ -261,6 +261,8 @@ function ProjectModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 
 // ACTIVE THEORY HERO COMPONENT MATCHING IMAGE 2
 function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <section id="hero" className="relative w-full h-screen overflow-hidden flex flex-col justify-between">
       {/* Background Video */}
@@ -279,7 +281,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
       {/* Hero Content & Floating Navigation Layer */}
       <div className="relative z-10 flex flex-col h-full w-full justify-between">
         {/* Navigation Floating Glass Pill with Ultra-Clean Glassmorphism */}
-        <header className="pt-3 sm:pt-4 px-4 sm:px-6 w-full max-w-5xl mx-auto flex items-center justify-center">
+        <header className="pt-3 sm:pt-4 px-4 sm:px-6 w-full max-w-5xl mx-auto flex items-center justify-center relative">
           <div className="bg-white/95 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex items-center justify-between w-full border border-black/5 transition-all duration-300">
             {/* Active Theory Logo */}
             <div className="flex items-center shrink-0 hover:scale-[1.02] transition-transform duration-200 py-0.5">
@@ -288,31 +290,31 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
 
             {/* Desktop Navigation Links */}
             <nav className="hidden md:flex items-center gap-6 lg:gap-8 select-none">
-              <span className="text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
+              <a href="#work" className="text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
                 Work
-              </span>
-              <span className="group text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer flex items-center gap-1 tracking-tight">
+              </a>
+              <a href="#services" className="group text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer flex items-center gap-1 tracking-tight">
                 What We Do{" "}
                 <span className="text-[9px] text-[#1B133C]/70 group-hover:translate-y-0.5 transition-transform duration-200">
                   ▼
                 </span>
-              </span>
-              <span className="group text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer flex items-center gap-1 tracking-tight">
+              </a>
+              <a href="#receipts" className="group text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer flex items-center gap-1 tracking-tight">
                 Industries{" "}
                 <span className="text-[9px] text-[#1B133C]/70 group-hover:translate-y-0.5 transition-transform duration-200">
                   ▼
                 </span>
-              </span>
-              <span className="text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
+              </a>
+              <a href="#culture" className="text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
                 Studio
-              </span>
-              <span className="text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
+              </a>
+              <a href="#footer" className="text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
                 Contact
-              </span>
+              </a>
             </nav>
 
-            {/* Right Status & Action Button */}
-            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+            {/* Right Status & Action Button + Mobile Menu Toggle */}
+            <div className="flex items-center gap-2 sm:gap-4 shrink-0">
               <div className="hidden sm:flex items-center gap-1.5 bg-[#1B133C]/5 border border-[#1B133C]/10 rounded-full px-3 py-1 text-[11px] font-bold text-[#1B133C] tracking-wide">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6ca300] opacity-75"></span>
@@ -320,21 +322,74 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
                 </span>
                 <span>BLR / CBE</span>
               </div>
+              
               <button
                 onClick={onOpenProject}
-                className="rounded-full bg-[#CBF24C] hover:bg-[#d8fa6d] px-4 sm:px-5 py-1.5 sm:py-2 text-xs font-bold text-[#0D0B14] shadow-[0_4px_12px_rgba(203,242,76,0.35)] hover:shadow-[0_6px_16px_rgba(203,242,76,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer shrink-0"
+                className="rounded-full bg-[#CBF24C] hover:bg-[#d8fa6d] px-3.5 sm:px-5 py-1.5 sm:py-2 text-xs font-bold text-[#0D0B14] shadow-[0_4px_12px_rgba(203,242,76,0.35)] hover:shadow-[0_6px_16px_rgba(203,242,76,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer shrink-0"
               >
                 Start a Project
               </button>
+
+              {/* Mobile Hamburger Menu Toggle Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden flex flex-col justify-center items-center w-8 h-8 rounded-full bg-black/5 hover:bg-black/10 transition-colors"
+                aria-label="Toggle Navigation Menu"
+              >
+                <span className={`h-0.5 w-4 bg-[#1B133C] transition-transform duration-200 ${mobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+                <span className={`h-0.5 w-4 bg-[#1B133C] transition-opacity duration-200 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`h-0.5 w-4 bg-[#1B133C] transition-transform duration-200 ${mobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+              </button>
             </div>
           </div>
+
+          {/* Mobile Dropdown Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-[#171327] border border-white/15 rounded-2xl p-5 shadow-2xl z-50 flex flex-col gap-4 text-white animate-fadeIn">
+              <a
+                href="#work"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-semibold border-b border-white/10 pb-2 text-white/90 hover:text-white"
+              >
+                Work
+              </a>
+              <a
+                href="#services"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-semibold border-b border-white/10 pb-2 text-white/90 hover:text-white"
+              >
+                What We Do
+              </a>
+              <a
+                href="#receipts"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-semibold border-b border-white/10 pb-2 text-white/90 hover:text-white"
+              >
+                Industries
+              </a>
+              <a
+                href="#culture"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-semibold border-b border-white/10 pb-2 text-white/90 hover:text-white"
+              >
+                Studio
+              </a>
+              <a
+                href="#footer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-semibold text-white/90 hover:text-white"
+              >
+                Contact
+              </a>
+            </div>
+          )}
         </header>
 
         {/* Hero Centered Content matching Image 2 */}
-        <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-20 sm:-mt-36 md:-mt-48 pb-12 max-w-5xl mx-auto">
+        <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-16 sm:-mt-36 md:-mt-48 pb-12 max-w-5xl mx-auto">
 
           {/* Main Headline in Instrument Serif */}
-          <h1 className="hero-headline text-[1.75rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
+          <h1 className="hero-headline text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.04] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
             Where bold brands<br />
             Meet Serious<br />
             <span className="text-[#1B133C]">Execution</span>.
