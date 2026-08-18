@@ -490,66 +490,66 @@ export default function App() {
             {/* HERO SECTION MATCHING IMAGE 2 */}
             <ActiveTheoryHero onOpenProject={() => setIsProjectOpen(true)} />
 
-            {/* MARQUEE LOGO STRIP WITH CLIENT PNG LOGOS ON LIGHT BACKGROUND */}
-            <section className="bg-[#F4F4F7] border-y border-black/10 py-6 overflow-hidden select-none">
+            {/* MARQUEE LOGO STRIP WITH FLOATING CLIENT PNG LOGOS */}
+            <section className="bg-[#F4F4F7] border-y border-black/10 py-6 sm:py-8 overflow-hidden select-none">
               <div className="strip">
-                <div className="marquee gap-6 items-center">
+                <div className="marquee gap-10 sm:gap-14 md:gap-16 items-center">
                   {/* Set 1 */}
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
-                    <AudiLogo className="h-7 w-auto text-black" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <AudiLogo className="h-6 sm:h-7 md:h-8 w-auto text-black object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
-                    <SiemensLogo className="h-9 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <SiemensLogo className="h-8 sm:h-9 md:h-10 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
-                    <ShanthiGearsLogo className="h-10 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <ShanthiGearsLogo className="h-9 sm:h-10 md:h-11 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
-                    <BurgerKingLogo className="h-11 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <BurgerKingLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
-                    <JayaCoffeeLogo className="h-10 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <JayaCoffeeLogo className="h-9 sm:h-10 md:h-11 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
-                    <RobotronicLogo className="h-11 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <RobotronicLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
-                    <ThreeDPrintingLogo className="h-11 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <ThreeDPrintingLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
-                    <SirpavanamLogo className="h-11 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <SirpavanamLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]">
-                    <MathiMobilesLogo className="h-11 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <MathiMobilesLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
 
                   {/* Set 2 (Identical Duplicate for Infinite Seamless Marquee Loop) */}
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
-                    <AudiLogo className="h-7 w-auto text-black" />
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <AudiLogo className="h-6 sm:h-7 md:h-8 w-auto text-black object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
-                    <SiemensLogo className="h-9 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <SiemensLogo className="h-8 sm:h-9 md:h-10 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
-                    <ShanthiGearsLogo className="h-10 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <ShanthiGearsLogo className="h-9 sm:h-10 md:h-11 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
-                    <BurgerKingLogo className="h-11 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <BurgerKingLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
-                    <JayaCoffeeLogo className="h-10 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <JayaCoffeeLogo className="h-9 sm:h-10 md:h-11 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
-                    <RobotronicLogo className="h-11 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <RobotronicLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
-                    <ThreeDPrintingLogo className="h-11 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <ThreeDPrintingLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
-                    <SirpavanamLogo className="h-11 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <SirpavanamLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
-                  <div className="logo-slot px-6 h-18 bg-white rounded-2xl border border-black/10 flex items-center justify-center shadow-sm shrink-0 min-w-[160px] max-w-[220px]" aria-hidden="true">
-                    <MathiMobilesLogo className="h-11 w-auto" />
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <MathiMobilesLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
                 </div>
               </div>
