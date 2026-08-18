@@ -389,15 +389,18 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
         <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-16 sm:-mt-36 md:-mt-48 pb-12 max-w-5xl mx-auto">
 
           {/* Main Headline in Instrument Serif */}
-          <h1 className="hero-headline text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.04] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
-            Where bold brands<br />
-            Meet Serious<br />
-            <span className="text-[#1B133C]">Execution</span>.
+          <h1 className="hero-headline text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.03] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
+            Where bold<br />
+            brands meet<br />
+            serious<br />
+            <span className="text-[#1B133C]">execution</span>.
           </h1>
 
-          {/* Subtitle */}
-          <p className="mt-5 sm:mt-7 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-[#1B133C]/80 font-medium mx-auto font-sans-inter text-center">
-            Strategy, branding, digital, performance and AI, connected by one senior team.
+          {/* Subtitle matching user screenshot alignment */}
+          <p className="mt-4 sm:mt-6 max-w-md sm:max-w-xl text-[12.5px] sm:text-sm md:text-base leading-relaxed text-[#1B133C]/85 font-medium mx-auto font-sans-inter text-center px-2">
+            Strategy, branding, digital,<br />
+            performance and AI,<br />
+            connected by one senior team.
           </p>
         </div>
 
