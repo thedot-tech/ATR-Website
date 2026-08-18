@@ -697,12 +697,7 @@ export default function App() {
                   </article>
                 </div>
 
-                <div className="card card-light" style={{ marginTop: 20, borderStyle: 'dashed' }}>
-                  <h4 className="h4">Why this four-service list works</h4>
-                  <p className="card-p" style={{ margin: 0 }}>
-                    Branding and Web are how clients first hire you. Performance is how they stay. AI Development is why they choose us over the agency down the road. The four compound: an AI qualification agent is worth far more when the same team wrote the ad, the landing page, and the follow-up sequence feeding it.
-                  </p>
-                </div>
+
               </div>
             </section>
 
