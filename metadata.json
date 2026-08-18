@@ -1,0 +1,6 @@
+{
+  "name": "Active Theory",
+  "description": "Creative & AI agency in Bengaluru and Coimbatore. We design the brand. Then we build the machine behind it.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
