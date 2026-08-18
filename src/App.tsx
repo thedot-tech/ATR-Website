@@ -364,7 +364,7 @@ export default function App() {
       let start: number | null = null;
       const duration = 1500;
       const targetBrands = 45;
-      const targetSpend = 38;
+      const targetSpend = 3.8;
       const targetVisits = 6400;
       const targetRoas = 4.2;
       const targetRetention = 91;
@@ -376,7 +376,7 @@ export default function App() {
 
         setCounts({
           brands: Math.round(targetBrands * ease),
-          spend: Math.round(targetSpend * ease),
+          spend: parseFloat((targetSpend * ease).toFixed(1)),
           visits: Math.round(targetVisits * ease),
           roas: parseFloat((targetRoas * ease).toFixed(1)),
           retention: Math.round(targetRetention * ease),
