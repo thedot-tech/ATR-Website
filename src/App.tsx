@@ -760,46 +760,51 @@ export default function App() {
                 </div>
 
                 <div className="grid-3 items-stretch" style={{ marginTop: 44 }}>
-                  <article className="quote h-full flex flex-col justify-between p-6 lg:p-8 bg-white rounded-3xl border border-black/10 shadow-sm">
+                  <article className="quote h-full flex flex-col justify-between p-6 sm:p-8 bg-white rounded-3xl border border-black/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] transition-all duration-300">
                     <div className="flex-1 flex flex-col justify-between">
+                      <div className="text-4xl font-serif text-violet-500/30 leading-none mb-3 font-serif-instrument select-none">“</div>
                       <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6">
                         Active Theory has helped us achieve excellent sales outcomes for our e-commerce platform, Sirpavanam. They are a highly experienced team who focus on finding the right solutions and delivering result-oriented outcomes. We truly appreciate their approach and commitment.
                       </p>
                     </div>
                     <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
                       <div className="quote-who">
-                        <div className="quote-n font-bold text-black text-sm">Sirpavanam</div>
-                        <div className="quote-r text-xs text-black/60 font-medium mt-0.5">E-Commerce Platform</div>
+                        <div className="quote-n font-semibold text-black text-[15px]">Sirpavanam</div>
+                        <div className="quote-r text-xs text-black/50 font-medium mt-0.5">E-Commerce Platform</div>
                       </div>
-                      <SirpavanamLogo className="h-10 lg:h-12 w-auto max-w-[140px] object-contain shrink-0" />
+                      <SirpavanamLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
                     </div>
                   </article>
-                  <article className="quote h-full flex flex-col justify-between p-6 lg:p-8 bg-white rounded-3xl border border-black/10 shadow-sm">
+
+                  <article className="quote h-full flex flex-col justify-between p-6 sm:p-8 bg-white rounded-3xl border border-black/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] transition-all duration-300">
                     <div className="flex-1 flex flex-col justify-between">
+                      <div className="text-4xl font-serif text-violet-500/30 leading-none mb-3 font-serif-instrument select-none">“</div>
                       <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6">
                         Robotronic has been partnering with Active Theory for over 4 years, and we are extremely happy with the association. Their coordination, timely execution, and result-oriented solutions are something we are truly grateful for.
                       </p>
                     </div>
                     <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
                       <div className="quote-who">
-                        <div className="quote-n font-bold text-black text-sm">Robotronic</div>
-                        <div className="quote-r text-xs text-black/60 font-medium mt-0.5">Technology Partner</div>
+                        <div className="quote-n font-semibold text-black text-[15px]">Robotronic</div>
+                        <div className="quote-r text-xs text-black/50 font-medium mt-0.5">Technology Partner</div>
                       </div>
-                      <RobotronicLogo className="h-10 lg:h-12 w-auto max-w-[140px] object-contain shrink-0" />
+                      <RobotronicLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
                     </div>
                   </article>
-                  <article className="quote h-full flex flex-col justify-between p-6 lg:p-8 bg-white rounded-3xl border border-black/10 shadow-sm">
+
+                  <article className="quote h-full flex flex-col justify-between p-6 sm:p-8 bg-white rounded-3xl border border-black/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] transition-all duration-300">
                     <div className="flex-1 flex flex-col justify-between">
+                      <div className="text-4xl font-serif text-violet-500/30 leading-none mb-3 font-serif-instrument select-none">“</div>
                       <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6">
                         Active Theory helped us create a unique and special brand identity for our exclusive Samsung showroom. The overall branding beautifully represented the next-level vision we had for our company. We are very happy with the outcome and their creative approach.
                       </p>
                     </div>
                     <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
                       <div className="quote-who">
-                        <div className="quote-n font-bold text-black text-sm">Exclusive Samsung Showroom</div>
-                        <div className="quote-r text-xs text-black/60 font-medium mt-0.5">Retail & Brand Identity</div>
+                        <div className="quote-n font-semibold text-black text-[15px]">Mathi Mobiles</div>
+                        <div className="quote-r text-xs text-black/50 font-medium mt-0.5">Retail & Brand Identity</div>
                       </div>
-                      <MathiMobilesLogo className="h-10 lg:h-12 w-auto max-w-[140px] object-contain shrink-0" />
+                      <MathiMobilesLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
                     </div>
                   </article>
                 </div>
@@ -1451,7 +1456,7 @@ export default function App() {
           <div className="ftr-bot">
             <span>© 2026 Active Theory. All rights reserved.</span>
             <span className="ftr-made">
-              <span className="w-2 h-2 rounded-full bg-[#CBF24C] inline-block mr-1.5"></span>Made in Bengaluru & Coimbatore. Obviously.
+              <span className="w-2 h-2 rounded-full bg-[#CBF24C] inline-block mr-1.5"></span>Made in Bengaluru & Coimbatore
             </span>
           </div>
         </div>
