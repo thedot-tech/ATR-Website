@@ -1,6 +1,6 @@
 import React from 'react';
 
-const activeTheoryLogoImg = '/assets/active theory logo.png';
+const activeTheoryLogoImg = '/assets/active.png';
 
 interface ActiveTheoryLogoProps {
   className?: string;
