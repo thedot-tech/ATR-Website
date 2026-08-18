@@ -9,6 +9,9 @@ const threeDPrintingImg = '/assets/3d ong.png';
 const siemensImg = '/assets/siemens.png';
 const shanthiGearsImg = '/assets/shanthi gears.png';
 const burgerKingImg = '/assets/burger king.png';
+const bbtImg = '/assets/bbt.png';
+const caterpillarImg = '/assets/caterpillar.png';
+const nolaOn5thImg = '/assets/nola_on_5th.png';
 
 // 1. Audi 4 Interlocking Rings Logo
 export const AudiLogo: React.FC<{ className?: string }> = ({ className = 'h-7 w-auto' }) => (
@@ -112,5 +115,32 @@ export const SamsungLogo: React.FC<{ className?: string }> = ({ className = 'h-5
       SAMSUNG
     </text>
   </svg>
+);
+
+// 10. BBT (Big Boy Toyz) Logo
+export const BbtLogo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
+  <img
+    src={bbtImg}
+    alt="Big Boy Toyz"
+    className={`object-contain max-h-full max-w-full ${className}`}
+  />
+);
+
+// 11. Caterpillar (CAT) Logo
+export const CaterpillarLogo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
+  <img
+    src={caterpillarImg}
+    alt="Caterpillar"
+    className={`object-contain max-h-full max-w-full ${className}`}
+  />
+);
+
+// 12. Nola on 5th Logo
+export const NolaOn5thLogo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
+  <img
+    src={nolaOn5thImg}
+    alt="Nola on 5th"
+    className={`object-contain max-h-full max-w-full ${className}`}
+  />
 );
 

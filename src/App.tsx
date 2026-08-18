@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import ActiveTheoryLogo from './components/ActiveTheoryLogo';
 import {
   AudiLogo,
-  JayaCoffeeLogo,
+  BbtLogo,
   SiemensLogo,
-  ShanthiGearsLogo,
+  CaterpillarLogo,
   BurgerKingLogo,
   RobotronicLogo,
   ThreeDPrintingLogo,
   SirpavanamLogo,
-  MathiMobilesLogo,
+  NolaOn5thLogo,
   SamsungLogo,
 } from './components/ClientLogos';
 
@@ -20,7 +20,6 @@ function ProjectModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [need, setNeed] = useState('Branding');
-  const [budget, setBudget] = useState('Under ₹2 lakh');
   const [msg, setMsg] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -57,7 +56,6 @@ function ProjectModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                 <p><strong>Email:</strong> ${email}</p>
                 <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
                 <p><strong>Service Needed:</strong> ${need}</p>
-                <p><strong>Estimated Budget:</strong> ${budget}</p>
                 <p><strong>Project Details:</strong> ${msg || 'None provided'}</p>
               </div>
             `,
@@ -214,22 +212,6 @@ function ProjectModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 
               <div>
                 <label className="block text-xs font-semibold text-white/80 mb-1">
-                  Budget range
-                </label>
-                <select
-                  value={budget}
-                  onChange={(e) => setBudget(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-white/15 focus:outline-none focus:border-[#CBF24C] text-sm text-white bg-[#171327]"
-                >
-                  <option value="Under ₹2 lakh">Under ₹2 lakh</option>
-                  <option value="₹2–5 lakh">₹2–5 lakh</option>
-                  <option value="₹5–15 lakh">₹5–15 lakh</option>
-                  <option value="₹15+ lakh">₹15+ lakh</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-white/80 mb-1">
                   Tell us about the project
                 </label>
                 <textarea
@@ -248,9 +230,6 @@ function ProjectModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
               >
                 {submitting ? 'Sending...' : 'Send it'}
               </button>
-              <p className="text-[11px] text-[#A49DBC] text-center mt-1">
-                Keeping the budget dropdown saves everyone a wasted call.
-              </p>
             </form>
           </div>
         )}
@@ -391,21 +370,17 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
         </header>
 
         {/* Hero Centered Content matching Image 2 */}
-        <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-16 sm:-mt-36 md:-mt-48 pb-12 max-w-5xl mx-auto">
+        <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-48 sm:-mt-76 md:-mt-96 pb-0 max-w-5xl mx-auto">
 
           {/* Main Headline in Instrument Serif */}
           <h1 className="hero-headline text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.03] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
-            Where bold<br />
-            brands meet<br />
-            serious<br />
-            <span className="text-[#1B133C]">execution</span>.
+            Where bold brands<br />
+            Meet Serious Execution.
           </h1>
 
-          {/* Subtitle matching user screenshot alignment */}
-          <p className="mt-4 sm:mt-6 max-w-md sm:max-w-xl text-[12.5px] sm:text-sm md:text-base leading-relaxed text-[#1B133C]/85 font-medium mx-auto font-sans-inter text-center px-2">
-            Strategy, branding, digital,<br />
-            performance and AI,<br />
-            connected by one senior team.
+          {/* Subtitle */}
+          <p className="mt-4 sm:mt-6 max-w-md sm:max-w-2xl text-[13px] sm:text-sm md:text-base leading-relaxed text-[#1B133C]/85 font-medium mx-auto font-sans-inter text-center px-2">
+            Strategy, branding, digital, performance and AI, connected by one senior team.
           </p>
         </div>
 
@@ -629,13 +604,13 @@ export default function App() {
                     <SiemensLogo className="h-8 sm:h-9 md:h-10 w-auto object-contain" />
                   </div>
                   <div className="shrink-0 flex items-center justify-center">
-                    <ShanthiGearsLogo className="h-9 sm:h-10 md:h-11 w-auto object-contain" />
+                    <BbtLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain text-black" />
                   </div>
                   <div className="shrink-0 flex items-center justify-center">
                     <BurgerKingLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
                   <div className="shrink-0 flex items-center justify-center">
-                    <JayaCoffeeLogo className="h-9 sm:h-10 md:h-11 w-auto object-contain" />
+                    <CaterpillarLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain text-black" />
                   </div>
                   <div className="shrink-0 flex items-center justify-center">
                     <RobotronicLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
@@ -647,7 +622,7 @@ export default function App() {
                     <SirpavanamLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
                   <div className="shrink-0 flex items-center justify-center">
-                    <MathiMobilesLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
+                    <NolaOn5thLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain text-black" />
                   </div>
 
                   {/* Set 2 (Identical Duplicate for Infinite Seamless Marquee Loop) */}
@@ -658,13 +633,13 @@ export default function App() {
                     <SiemensLogo className="h-8 sm:h-9 md:h-10 w-auto object-contain" />
                   </div>
                   <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
-                    <ShanthiGearsLogo className="h-9 sm:h-10 md:h-11 w-auto object-contain" />
+                    <BbtLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain text-black" />
                   </div>
                   <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
                     <BurgerKingLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
                   <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
-                    <JayaCoffeeLogo className="h-9 sm:h-10 md:h-11 w-auto object-contain" />
+                    <CaterpillarLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain text-black" />
                   </div>
                   <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
                     <RobotronicLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
@@ -676,7 +651,7 @@ export default function App() {
                     <SirpavanamLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
                   </div>
                   <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
-                    <MathiMobilesLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
+                    <NolaOn5thLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain text-black" />
                   </div>
                 </div>
               </div>
@@ -928,7 +903,7 @@ export default function App() {
                       <div className="quote-who">
                         <div className="quote-r text-xs text-black/60 font-medium tracking-wide">Retail & Brand Identity</div>
                       </div>
-                      <MathiMobilesLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
+                      <NolaOn5thLogo className="h-9 sm:h-10 md:h-11 w-auto max-w-[140px] object-contain shrink-0 text-black" />
                     </div>
                   </article>
                 </div>
