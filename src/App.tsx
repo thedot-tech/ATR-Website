@@ -769,8 +769,7 @@ export default function App() {
                     </div>
                     <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
                       <div className="quote-who">
-                        <div className="quote-n font-semibold text-black text-[15px]">Sirpavanam</div>
-                        <div className="quote-r text-xs text-black/50 font-medium mt-0.5">E-Commerce Platform</div>
+                        <div className="quote-r text-xs text-black/60 font-medium tracking-wide">E-Commerce Platform</div>
                       </div>
                       <SirpavanamLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
                     </div>
@@ -785,8 +784,7 @@ export default function App() {
                     </div>
                     <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
                       <div className="quote-who">
-                        <div className="quote-n font-semibold text-black text-[15px]">Robotronic</div>
-                        <div className="quote-r text-xs text-black/50 font-medium mt-0.5">Technology Partner</div>
+                        <div className="quote-r text-xs text-black/60 font-medium tracking-wide">Technology Partner</div>
                       </div>
                       <RobotronicLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
                     </div>
@@ -801,8 +799,7 @@ export default function App() {
                     </div>
                     <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
                       <div className="quote-who">
-                        <div className="quote-n font-semibold text-black text-[15px]">Mathi Mobiles</div>
-                        <div className="quote-r text-xs text-black/50 font-medium mt-0.5">Retail & Brand Identity</div>
+                        <div className="quote-r text-xs text-black/60 font-medium tracking-wide">Retail & Brand Identity</div>
                       </div>
                       <MathiMobilesLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
                     </div>
