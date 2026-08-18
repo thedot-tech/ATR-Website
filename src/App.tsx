@@ -23,14 +23,76 @@ function ProjectModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   const [budget, setBudget] = useState('Under ₹2 lakh');
   const [msg, setMsg] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.includes('@')) {
-      setSubmitted(true);
+    if (!email.includes('@')) return;
+
+    setSubmitting(true);
+    const brevoApiKey = import.meta.env.VITE_BREVO_API_KEY;
+    const recipientEmail = import.meta.env.VITE_NOTIFICATION_EMAIL || 'hello@activetheory.in';
+
+    if (brevoApiKey) {
+      try {
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'api-key': brevoApiKey,
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            sender: { name: name || 'Website Visitor', email: email },
+            to: [{ email: recipientEmail, name: 'Active Theory Team' }],
+            subject: `🔥 New Project Lead: ${name || 'Inquiry'} (${co || 'Individual'})`,
+            htmlContent: `
+              <div style="font-family: sans-serif; padding: 24px; color: #111; max-width: 600px; border: 1px solid #eee; border-radius: 12px;">
+                <h2 style="color: #6ca300; margin-top: 0;">New Project Inquiry Received</h2>
+                <hr style="border: none; border-top: 1px solid #eee; margin: 16px 0;" />
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Company:</strong> ${co || 'N/A'}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
+                <p><strong>Service Needed:</strong> ${need}</p>
+                <p><strong>Estimated Budget:</strong> ${budget}</p>
+                <p><strong>Project Details:</strong> ${msg || 'None provided'}</p>
+              </div>
+            `,
+          }),
+        });
+
+        // Also save contact to Brevo Contacts list
+        try {
+          await fetch('https://api.brevo.com/v3/contacts', {
+            method: 'POST',
+            headers: {
+              'accept': 'application/json',
+              'api-key': brevoApiKey,
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: email,
+              attributes: {
+                FIRSTNAME: name,
+                SMS: phone,
+                COMPANY: co,
+              },
+              updateEnabled: true,
+            }),
+          });
+        } catch {
+          // ignore background contact save error
+        }
+      } catch (err) {
+        console.error('Brevo API Error:', err);
+      }
     }
+
+    setSubmitting(false);
+    setSubmitted(true);
   };
 
   return (
@@ -181,9 +243,10 @@ function ProjectModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-full bg-[#CBF24C] text-[#0D0B14] font-bold text-sm shadow-md hover:bg-[#d8fa6d] transition-all duration-200 cursor-pointer"
+                disabled={submitting}
+                className="w-full py-3.5 rounded-full bg-[#CBF24C] text-[#0D0B14] font-bold text-sm shadow-md hover:bg-[#d8fa6d] transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send it
+                {submitting ? 'Sending...' : 'Send it'}
               </button>
               <p className="text-[11px] text-[#A49DBC] text-center mt-1">
                 Keeping the budget dropdown saves everyone a wasted call.
