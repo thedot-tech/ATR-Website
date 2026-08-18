@@ -273,7 +273,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
           {/* Main Headline in Instrument Serif */}
           <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
             Where bold brands<br className="hidden sm:inline" />{" "}
-            meet <span className="text-[#1B133C] font-bold">serious execution</span>.
+            meet <span className="text-[#1B133C]">Serious Execution</span>.
           </h1>
 
           {/* Subtitle */}
