@@ -813,11 +813,11 @@ export default function App() {
 
                 <div className="grid-3" style={{ marginTop: 44 }}>
                   <article className="vcard">
-                    <div className="vcard-top vcard-re" data-mark="RE"></div>
+                    <div className="vcard-saas vcard-top" data-mark="SaaS"></div>
                     <div className="vcard-body">
-                      <h3 className="h3">Real Estate</h3>
+                      <h3 className="h3">SaaS & Technology</h3>
                       <p className="card-p">
-                        Launches measured in qualified site visits, not vanity leads. 3D visualisers, project microsites, performance creative that sells inventory without discounting, and post-enquiry AI agents that follow up before the lead goes cold.
+                        Positioning that makes clear what you actually do in five seconds. Marketing sites built for search and conversions. Pipeline generation that speaks to developers, buyers, or CFOs with the right vocabulary.
                       </p>
                       <div className="card-foot">
 
@@ -839,11 +839,11 @@ export default function App() {
                   </article>
 
                   <article className="vcard">
-                    <div className="vcard-saas vcard-top" data-mark="SaaS"></div>
+                    <div className="vcard-top vcard-re" data-mark="RE"></div>
                     <div className="vcard-body">
-                      <h3 className="h3">SaaS & Technology</h3>
+                      <h3 className="h3">Real Estate</h3>
                       <p className="card-p">
-                        Positioning that makes clear what you actually do in five seconds. Marketing sites built for search and conversions. Pipeline generation that speaks to developers, buyers, or CFOs with the right vocabulary.
+                        Launches measured in qualified site visits, not vanity leads. 3D visualisers, project microsites, performance creative that sells inventory without discounting, and post-enquiry AI agents that follow up before the lead goes cold.
                       </p>
                       <div className="card-foot">
 
@@ -862,7 +862,7 @@ export default function App() {
                   <h2 className="h2">What founders and CMOs say about working with Active Theory.</h2>
                 </div>
 
-                <div className="grid-3 items-stretch" style={{ marginTop: 44 }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch max-w-4xl mx-auto" style={{ marginTop: 44 }}>
                   <article className="quote h-full flex flex-col justify-between p-6 sm:p-8 bg-white rounded-3xl border border-black/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] transition-all duration-300">
                     <div className="flex-1 flex flex-col justify-between">
                       <div className="text-4xl font-serif text-violet-500/30 leading-none mb-3 font-serif-instrument select-none">“</div>
@@ -890,21 +890,6 @@ export default function App() {
                         <div className="quote-r text-xs text-black/60 font-medium tracking-wide">Technology Partner</div>
                       </div>
                       <RobotronicLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
-                    </div>
-                  </article>
-
-                  <article className="quote h-full flex flex-col justify-between p-6 sm:p-8 bg-white rounded-3xl border border-black/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] transition-all duration-300">
-                    <div className="flex-1 flex flex-col justify-between">
-                      <div className="text-4xl font-serif text-violet-500/30 leading-none mb-3 font-serif-instrument select-none">“</div>
-                      <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6">
-                        Active Theory helped us create a unique and special brand identity for our exclusive Samsung showroom. The overall branding beautifully represented the next-level vision we had for our company. We are very happy with the outcome and their creative approach.
-                      </p>
-                    </div>
-                    <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
-                      <div className="quote-who">
-                        <div className="quote-r text-xs text-black/60 font-medium tracking-wide">Retail & Brand Identity</div>
-                      </div>
-                      <MathiMobilesLogo className="h-9 sm:h-10 md:h-11 w-auto max-w-[140px] object-contain shrink-0" />
                     </div>
                   </article>
                 </div>
