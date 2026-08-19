@@ -885,11 +885,13 @@ export default function App() {
                         </p>
                       </div>
                     </div>
-                    <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
-                      <div className="quote-who">
+                    <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4 h-14">
+                      <div className="quote-who flex items-center h-full">
                         <div className="quote-r text-xs text-black/70 font-semibold tracking-wide">E-Commerce Platform</div>
                       </div>
-                      <SirpavanamLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
+                      <div className="h-full flex items-center justify-end shrink-0">
+                        <SirpavanamLogo className="max-h-7 sm:max-h-8 w-auto max-w-[130px] object-contain" />
+                      </div>
                     </div>
                   </article>
 
@@ -906,11 +908,13 @@ export default function App() {
                         </p>
                       </div>
                     </div>
-                    <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
-                      <div className="quote-who">
+                    <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4 h-14">
+                      <div className="quote-who flex items-center h-full">
                         <div className="quote-r text-xs text-black/70 font-semibold tracking-wide">Technology Partner</div>
                       </div>
-                      <RobotronicLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
+                      <div className="h-full flex items-center justify-end shrink-0">
+                        <RobotronicLogo className="max-h-7 sm:max-h-8 w-auto max-w-[130px] object-contain" />
+                      </div>
                     </div>
                   </article>
                 </div>
