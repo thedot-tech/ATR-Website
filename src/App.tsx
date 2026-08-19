@@ -857,16 +857,15 @@ export default function App() {
             {/* TESTIMONIALS / QUOTES */}
             <section className="sec bg-paper">
               <div className="wrap">
-                <div style={{ maxWidth: '60ch' }}>
-                  <p className="eyebrow eyebrow-violet">Client words</p>
-                  <h2 className="h2">What founders and CMOs say about working with Active Theory.</h2>
+                <div className="text-center mx-auto max-w-2xl">
+                  <p className="eyebrow eyebrow-violet inline-block text-center">Client words</p>
+                  <h2 className="h2 text-center mx-auto">What founders and CMOs say about working with Active Theory.</h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch max-w-4xl mx-auto" style={{ marginTop: 44 }}>
                   <article className="quote h-full flex flex-col justify-between p-6 sm:p-8 bg-white rounded-3xl border border-black/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] transition-all duration-300">
                     <div className="flex-1 flex flex-col justify-between">
-                      <div className="text-4xl font-serif text-violet-500/30 leading-none mb-3 font-serif-instrument select-none">“</div>
-                      <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6">
+                      <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6 pt-2">
                         Active Theory has helped us achieve excellent sales outcomes for our e-commerce platform, Sirpavanam. They are a highly experienced team who focus on finding the right solutions and delivering result-oriented outcomes. We truly appreciate their approach and commitment.
                       </p>
                     </div>
@@ -880,8 +879,7 @@ export default function App() {
 
                   <article className="quote h-full flex flex-col justify-between p-6 sm:p-8 bg-white rounded-3xl border border-black/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] transition-all duration-300">
                     <div className="flex-1 flex flex-col justify-between">
-                      <div className="text-4xl font-serif text-violet-500/30 leading-none mb-3 font-serif-instrument select-none">“</div>
-                      <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6">
+                      <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6 pt-2">
                         Robotronic has been partnering with Active Theory for over 4 years, and we are extremely happy with the association. Their coordination, timely execution, and result-oriented solutions are something we are truly grateful for.
                       </p>
                     </div>
