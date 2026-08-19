@@ -702,7 +702,13 @@ export default function App() {
             {/* STATS */}
             <section className="sec bg-ink-2">
               <div className="wrap">
-                <p className="eyebrow eyebrow-lime">The receipts</p>
+                <div className="flex items-center justify-between gap-4 mb-2">
+                  <p className="eyebrow eyebrow-lime !mb-0">The receipts</p>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#CCFF00]/10 text-[#CCFF00] text-[10px] font-mono border border-[#CCFF00]/20 font-semibold tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00] animate-pulse"></span>
+                    LIVE METRICS STREAM
+                  </span>
+                </div>
                 <h2 className="h2" style={{ maxWidth: '20ch' }}>
                   Numbers we are happy to be held to.
                 </h2>
@@ -712,17 +718,20 @@ export default function App() {
                     <p className="stat-l">Brands and Products Build</p>
                     <p className="stat-w">Volume signal</p>
                   </div>
-                  <div className="stat">
+                  <div className="stat relative group border-[#CCFF00]/30 hover:border-[#CCFF00]/60 shadow-[0_0_20px_rgba(204,255,0,0.05)] transition-all duration-300">
+                    <span className="inline-block self-start px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/25 mb-3 tracking-wider uppercase">MEDIA_API</span>
                     <div className="stat-n">₹{counts.spend} Cr</div>
                     <p className="stat-l">Media Spend API Pipeline</p>
                     <p className="stat-w">Programmatic budget allocation, campaign orchestration, attribution events & real-time spend tracking.</p>
                   </div>
-                  <div className="stat">
+                  <div className="stat relative group border-[#CCFF00]/30 hover:border-[#CCFF00]/60 shadow-[0_0_20px_rgba(204,255,0,0.05)] transition-all duration-300">
+                    <span className="inline-block self-start px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/25 mb-3 tracking-wider uppercase">EVENT_STREAM</span>
                     <div className="stat-n">{counts.visits.toLocaleString()}+</div>
                     <p className="stat-l">Qualified Traffic Event Stream</p>
                     <p className="stat-w">API-driven acquisition tracking, funnel event ingestion, session qualification & conversion routing.</p>
                   </div>
-                  <div className="stat">
+                  <div className="stat relative group border-[#CCFF00]/30 hover:border-[#CCFF00]/60 shadow-[0_0_20px_rgba(204,255,0,0.05)] transition-all duration-300">
+                    <span className="inline-block self-start px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/25 mb-3 tracking-wider uppercase">AI_ENGINE</span>
                     <div className="stat-n">{counts.roas}x</div>
                     <p className="stat-l">Performance Optimization Engine</p>
                     <p className="stat-w">ROAS signal processing, creative performance data, bid optimization & automated campaign feedback loops.</p>
