@@ -714,18 +714,18 @@ export default function App() {
                   </div>
                   <div className="stat">
                     <div className="stat-n">₹{counts.spend} Cr</div>
-                    <p className="stat-l">Ad Spend & Media Pipeline</p>
-                    <p className="stat-w">Programmatic attribution & multi-channel campaign budget deployment</p>
+                    <p className="stat-l">Media Spend API Pipeline</p>
+                    <p className="stat-w">Programmatic budget allocation, campaign orchestration, attribution events & real-time spend tracking.</p>
                   </div>
                   <div className="stat">
                     <div className="stat-n">{counts.visits.toLocaleString()}+</div>
-                    <p className="stat-l">Qualified Site Visits & Funnel Conversions</p>
-                    <p className="stat-w">High-intent user acquisition via bespoke microsites & targeted ad pipelines</p>
+                    <p className="stat-l">Qualified Traffic Event Stream</p>
+                    <p className="stat-w">API-driven acquisition tracking, funnel event ingestion, session qualification & conversion routing.</p>
                   </div>
                   <div className="stat">
                     <div className="stat-n">{counts.roas}x</div>
-                    <p className="stat-l">Average Funnel ROAS & Yield</p>
-                    <p className="stat-w">Engineered performance creative & programmatic ad spend optimization</p>
+                    <p className="stat-l">Performance Optimization Engine</p>
+                    <p className="stat-w">ROAS signal processing, creative performance data, bid optimization & automated campaign feedback loops.</p>
                   </div>
                   <div className="stat">
                     <div className="stat-n">{counts.retention}%</div>
