@@ -307,7 +307,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
                 </span>
                 <span>BLR / CBE</span>
               </div>
-              
+
               <button
                 onClick={onOpenProject}
                 className="flex items-center justify-center rounded-full bg-[#CBF24C] hover:bg-[#d8fa6d] px-3.5 sm:px-5 h-8 sm:h-9 text-[11px] sm:text-xs font-bold text-[#0D0B14] shadow-[0_4px_12px_rgba(203,242,76,0.35)] hover:shadow-[0_6px_16px_rgba(203,242,76,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer shrink-0 whitespace-nowrap"
@@ -709,7 +709,7 @@ export default function App() {
                 <div className="stats">
                   <div className="stat">
                     <div className="stat-n">{counts.brands}+</div>
-                    <p className="stat-l">Brands built or rebuilt</p>
+                    <p className="stat-l">Brands and Products Build</p>
                     <p className="stat-w">Volume signal</p>
                   </div>
                   <div className="stat">
