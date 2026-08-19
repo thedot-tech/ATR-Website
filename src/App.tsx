@@ -720,7 +720,7 @@ export default function App() {
                   </div>
                   <div className="stat relative group border-[#CCFF00]/30 hover:border-[#CCFF00]/60 shadow-[0_0_20px_rgba(204,255,0,0.05)] transition-all duration-300">
                     <span className="inline-block self-start px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/25 mb-3 tracking-wider uppercase">MEDIA_API</span>
-                    <div className="stat-n">₹{counts.spend} Cr</div>
+                    <div className="stat-n">${counts.spend} Million</div>
                     <p className="stat-l">Media Spend API Pipeline</p>
                     <p className="stat-w">Programmatic budget allocation, campaign orchestration, attribution events & real-time spend tracking.</p>
                   </div>
@@ -1448,7 +1448,27 @@ export default function App() {
                     </div>
 
                     {/* Offices Block with Embedded Maps */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      {/* US Card */}
+                      <div className="p-5 rounded-2xl bg-[#171327] border border-white/10 flex flex-col justify-between">
+                        <div>
+                          <h3 className="font-bold text-lg text-white mb-1">USA</h3>
+                          <p className="text-xs text-[#A49DBC] leading-relaxed">
+                            1712 Pioneer Avenue<br />
+                            Suite 7000, Cheyenne<br />
+                            Wyoming 82001, USA
+                          </p>
+                        </div>
+                        <div className="w-full h-32 rounded-xl overflow-hidden mt-4 border border-white/10 relative">
+                          <iframe
+                            title="Wyoming Map"
+                            src="https://maps.google.com/maps?q=1712%20Pioneer%20Avenue%2C%20Suite%207000%2C%20Cheyenne%2C%20WY%2082001&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            className="w-full h-full border-0 filter grayscale invert contrast-125 opacity-80 hover:filter-none hover:opacity-100 transition-all duration-300"
+                            loading="lazy"
+                          ></iframe>
+                        </div>
+                      </div>
+
                       {/* Bengaluru Card */}
                       <div className="p-5 rounded-2xl bg-[#171327] border border-white/10 flex flex-col justify-between">
                         <div>
@@ -1509,7 +1529,7 @@ export default function App() {
               <a href="#/" className="inline-block mb-4 transition-opacity hover:opacity-85">
                 <ActiveTheoryLogo theme="light" height={80} />
               </a>
-              <p>A creative and AI agency in Bengaluru and Coimbatore. Identity, websites, performance campaigns, and the AI systems that make all three work harder.</p>
+              <p>A creative and AI agency in the US & India. Identity, websites, performance campaigns, and the AI systems that make all three work harder.</p>
               <div className="btn-row" style={{ marginTop: 22 }}>
                 <button onClick={() => setIsProjectOpen(true)} className="btn btn-lime btn-sm cursor-pointer">
                   Start a Project
@@ -1546,7 +1566,14 @@ export default function App() {
           </div>
 
           {/* OFFICE ADDRESSES BLOCK */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-b border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-b border-white/10">
+            <div>
+              <p className="ftr-h">UNITED STATES</p>
+              <p className="text-sm text-[#A49DBC] leading-relaxed">
+                1712 Pioneer Avenue, Suite 7000<br />
+                Cheyenne, Wyoming 82001
+              </p>
+            </div>
             <div>
               <p className="ftr-h">BENGALURU</p>
               <p className="text-sm text-[#A49DBC] leading-relaxed">
@@ -1565,9 +1592,7 @@ export default function App() {
 
           <div className="ftr-bot">
             <span>© 2026 Active Theory. All rights reserved.</span>
-            <span className="ftr-made">
-              <span className="w-2 h-2 rounded-full bg-[#CBF24C] inline-block mr-1.5"></span>Made in Bengaluru & Coimbatore
-            </span>
+           
           </div>
         </div>
       </footer>
