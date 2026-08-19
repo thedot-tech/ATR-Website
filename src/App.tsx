@@ -262,14 +262,14 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
       <div className="relative z-10 flex flex-col h-full w-full justify-between">
         {/* Navigation Floating Glass Pill with Ultra-Clean Glassmorphism */}
         <header className="pt-2.5 sm:pt-4 px-2.5 sm:px-6 w-full max-w-5xl mx-auto flex items-center justify-center relative">
-          <div className="bg-white/95 backdrop-blur-md rounded-full px-3 sm:px-6 py-1.5 sm:py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex items-center justify-between w-full border border-black/5 transition-all duration-300">
-            {/* Active Theory Logo (Responsive height: 32px on mobile, 44px on desktop) */}
-            <div className="flex items-center shrink hover:scale-[1.02] transition-transform duration-200 py-0.5">
-              <div className="sm:hidden">
-                <ActiveTheoryLogo theme="dark" height={32} />
+          <div className="bg-white/95 backdrop-blur-md rounded-full px-3.5 sm:px-6 py-2 sm:py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex items-center justify-between w-full border border-black/5 transition-all duration-300">
+            {/* Active Theory Logo (Pixel-perfect center alignment) */}
+            <div className="flex items-center shrink-0 hover:scale-[1.02] transition-transform duration-200">
+              <div className="sm:hidden flex items-center">
+                <ActiveTheoryLogo theme="dark" height={28} />
               </div>
-              <div className="hidden sm:block">
-                <ActiveTheoryLogo theme="dark" height={44} />
+              <div className="hidden sm:flex items-center">
+                <ActiveTheoryLogo theme="dark" height={36} />
               </div>
             </div>
 
@@ -299,7 +299,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
             </nav>
 
             {/* Right Status & Action Button + Mobile Menu Toggle */}
-            <div className="flex items-center gap-1.5 sm:gap-4 shrink-0">
+            <div className="flex items-center gap-2 sm:gap-4 shrink-0">
               <div className="hidden sm:flex items-center gap-1.5 bg-[#1B133C]/5 border border-[#1B133C]/10 rounded-full px-3 py-1 text-[11px] font-bold text-[#1B133C] tracking-wide">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6ca300] opacity-75"></span>
@@ -310,7 +310,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
               
               <button
                 onClick={onOpenProject}
-                className="rounded-full bg-[#CBF24C] hover:bg-[#d8fa6d] px-2.5 sm:px-5 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold text-[#0D0B14] shadow-[0_4px_12px_rgba(203,242,76,0.35)] hover:shadow-[0_6px_16px_rgba(203,242,76,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer shrink-0 whitespace-nowrap"
+                className="flex items-center justify-center rounded-full bg-[#CBF24C] hover:bg-[#d8fa6d] px-3.5 sm:px-5 h-8 sm:h-9 text-[11px] sm:text-xs font-bold text-[#0D0B14] shadow-[0_4px_12px_rgba(203,242,76,0.35)] hover:shadow-[0_6px_16px_rgba(203,242,76,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer shrink-0 whitespace-nowrap"
               >
                 Start a Project
               </button>
@@ -318,7 +318,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
               {/* Mobile Hamburger Menu Toggle Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden flex flex-col justify-center items-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/5 hover:bg-black/10 transition-colors shrink-0"
+                className="md:hidden flex flex-col justify-center items-center w-8 h-8 rounded-full bg-black/5 hover:bg-black/10 transition-colors shrink-0"
                 aria-label="Toggle Navigation Menu"
               >
                 <span className={`h-0.5 w-3.5 sm:w-4 bg-[#1B133C] transition-transform duration-200 ${mobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
