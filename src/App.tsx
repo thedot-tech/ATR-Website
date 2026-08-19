@@ -714,18 +714,18 @@ export default function App() {
                   </div>
                   <div className="stat">
                     <div className="stat-n">₹{counts.spend} Cr</div>
-                    <p className="stat-l">Ad spend managed</p>
-                    <p className="stat-w">The number that qualifies you for real estate budgets</p>
+                    <p className="stat-l">Ad Spend & Media Pipeline</p>
+                    <p className="stat-w">Programmatic attribution & multi-channel campaign budget deployment</p>
                   </div>
                   <div className="stat">
                     <div className="stat-n">{counts.visits.toLocaleString()}+</div>
-                    <p className="stat-l">Qualified site visits driven</p>
-                    <p className="stat-w">Developers buy site visits, not leads</p>
+                    <p className="stat-l">Qualified Site Visits & Funnel Conversions</p>
+                    <p className="stat-w">High-intent user acquisition via bespoke microsites & targeted ad pipelines</p>
                   </div>
                   <div className="stat">
                     <div className="stat-n">{counts.roas}x</div>
-                    <p className="stat-l">Average return on ad spend, D2C</p>
-                    <p className="stat-w">The only D2C metric a founder cares about</p>
+                    <p className="stat-l">Average Funnel ROAS & Yield</p>
+                    <p className="stat-w">Engineered performance creative & programmatic ad spend optimization</p>
                   </div>
                   <div className="stat">
                     <div className="stat-n">{counts.retention}%</div>
@@ -863,29 +863,43 @@ export default function App() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch max-w-4xl mx-auto" style={{ marginTop: 44 }}>
-                  <article className="quote h-full flex flex-col justify-between p-6 sm:p-8 bg-white rounded-3xl border border-black/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] transition-all duration-300">
+                  <article className="quote h-full flex flex-col justify-between p-7 sm:p-9 bg-gradient-to-b from-white via-white to-[#f6f2fc]/60 rounded-3xl border border-black/10 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(108,70,193,0.12)] hover:-translate-y-1.5 transition-all duration-300 relative group">
                     <div className="flex-1 flex flex-col justify-between">
-                      <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6 pt-2">
-                        Active Theory has helped us achieve excellent sales outcomes for our e-commerce platform, Sirpavanam. They are a highly experienced team who focus on finding the right solutions and delivering result-oriented outcomes. We truly appreciate their approach and commitment.
-                      </p>
+                      <div>
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#6C46C1]/10 border border-[#6C46C1]/20 text-[#6C46C1] text-[11px] font-bold tracking-wide uppercase mb-5">
+                          <span>★ 5.0</span>
+                          <span>•</span>
+                          <span>Verified Client Review</span>
+                        </div>
+                        <p className="quote-t text-[15px] leading-relaxed text-black/85 font-medium mb-6 border-l-2 border-[#6C46C1]/50 pl-4 sm:pl-5">
+                          Active Theory has helped us achieve excellent sales outcomes for our e-commerce platform, Sirpavanam. They are a highly experienced team who focus on finding the right solutions and delivering result-oriented outcomes. We truly appreciate their approach and commitment.
+                        </p>
+                      </div>
                     </div>
                     <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
                       <div className="quote-who">
-                        <div className="quote-r text-xs text-black/60 font-medium tracking-wide">E-Commerce Platform</div>
+                        <div className="quote-r text-xs text-black/70 font-semibold tracking-wide">E-Commerce Platform</div>
                       </div>
                       <SirpavanamLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
                     </div>
                   </article>
 
-                  <article className="quote h-full flex flex-col justify-between p-6 sm:p-8 bg-white rounded-3xl border border-black/10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] transition-all duration-300">
+                  <article className="quote h-full flex flex-col justify-between p-7 sm:p-9 bg-gradient-to-b from-white via-white to-[#f6f2fc]/60 rounded-3xl border border-black/10 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(108,70,193,0.12)] hover:-translate-y-1.5 transition-all duration-300 relative group">
                     <div className="flex-1 flex flex-col justify-between">
-                      <p className="quote-t text-[15px] leading-relaxed text-black/80 font-medium mb-6 pt-2">
-                        Robotronic has been partnering with Active Theory for over 4 years, and we are extremely happy with the association. Their coordination, timely execution, and result-oriented solutions are something we are truly grateful for.
-                      </p>
+                      <div>
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#6C46C1]/10 border border-[#6C46C1]/20 text-[#6C46C1] text-[11px] font-bold tracking-wide uppercase mb-5">
+                          <span>★ 5.0</span>
+                          <span>•</span>
+                          <span>4+ Year Partnership</span>
+                        </div>
+                        <p className="quote-t text-[15px] leading-relaxed text-black/85 font-medium mb-6 border-l-2 border-[#6C46C1]/50 pl-4 sm:pl-5">
+                          Robotronic has been partnering with Active Theory for over 4 years, and we are extremely happy with the association. Their coordination, timely execution, and result-oriented solutions are something we are truly grateful for.
+                        </p>
+                      </div>
                     </div>
                     <div className="mt-auto pt-5 border-t border-black/10 flex items-center justify-between gap-4">
                       <div className="quote-who">
-                        <div className="quote-r text-xs text-black/60 font-medium tracking-wide">Technology Partner</div>
+                        <div className="quote-r text-xs text-black/70 font-semibold tracking-wide">Technology Partner</div>
                       </div>
                       <RobotronicLogo className="h-9 sm:h-10 w-auto max-w-[130px] object-contain shrink-0" />
                     </div>
