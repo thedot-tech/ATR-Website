@@ -282,7 +282,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
             </div>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center gap-6 lg:gap-8 select-none">
+            <nav className="hidden lg:flex items-center gap-6 lg:gap-8 select-none">
               <a href="#work" className="text-[13px] lg:text-[14px] font-semibold text-[#1B133C] hover:text-black transition-colors cursor-pointer tracking-tight">
                 Work
               </a>
@@ -326,7 +326,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
               {/* Mobile Hamburger Menu Toggle Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden flex flex-col justify-center items-center w-11 h-11 rounded-full bg-black/5 hover:bg-black/10 transition-colors shrink-0"
+                className="lg:hidden flex flex-col justify-center items-center w-11 h-11 rounded-full bg-black/5 hover:bg-black/10 transition-colors shrink-0"
                 aria-label="Toggle Navigation Menu"
               >
                 <span className={`h-0.5 w-3.5 sm:w-4 bg-[#1B133C] transition-transform duration-200 ${mobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
@@ -338,7 +338,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
 
           {/* Mobile Dropdown Navigation Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-[#171327] border border-white/15 rounded-2xl p-5 shadow-2xl z-50 flex flex-col gap-4 text-white animate-fadeIn">
+            <div className="lg:hidden absolute top-full left-4 right-4 mt-2 bg-[#171327] border border-white/15 rounded-2xl p-5 shadow-2xl z-50 flex flex-col gap-4 text-white animate-fadeIn">
               <a
                 href="#work"
                 onClick={() => setMobileMenuOpen(false)}
@@ -407,6 +407,7 @@ export default function App() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [showCookie, setShowCookie] = useState(true);
   const [isProjectOpen, setIsProjectOpen] = useState(false);
+  const [subpageMenuOpen, setSubpageMenuOpen] = useState(false);
 
   // Form states
   const [nlEmail, setNlEmail] = useState('');
@@ -451,6 +452,7 @@ export default function App() {
       let path = (window.location.hash || '#/').replace(/^#/, '');
       if (path === '' || path === '/') path = '/';
       setCurrentRoute(path);
+      setSubpageMenuOpen(false);
       document.title = titles[path] || 'Active Theory — Creative & AI Agency';
       window.scrollTo(0, 0);
     };
@@ -544,12 +546,12 @@ export default function App() {
       {/* SUBPAGE HEADER (Rendered only on non-home pages) */}
       {currentRoute !== '/' && (
         <header className="sticky top-0 z-40 w-full bg-[#171327]/95 backdrop-blur-md border-b border-white/10 py-3.5 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <div className="max-w-6xl mx-auto flex items-center justify-between relative">
             <a href="#/" className="flex items-center gap-2.5 transition-opacity hover:opacity-85">
               <ActiveTheoryLogo theme="light" height={52} />
             </a>
 
-            <nav className="hidden md:flex items-center gap-7">
+            <nav className="hidden lg:flex items-center gap-7">
               <a href="#/" className="text-sm font-medium text-white/75 hover:text-white transition-colors">
                 Home
               </a>
@@ -587,8 +589,49 @@ export default function App() {
               >
                 Start a Project
               </button>
+
+              {/* Mobile/Tablet Menu Toggle */}
+              <button
+                onClick={() => setSubpageMenuOpen(!subpageMenuOpen)}
+                className="lg:hidden flex flex-col justify-center items-center w-11 h-11 rounded-full bg-white/5 hover:bg-white/10 transition-colors shrink-0"
+                aria-label="Toggle Navigation Menu"
+              >
+                <span className={`h-0.5 w-4 bg-white transition-transform duration-200 ${subpageMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+                <span className={`h-0.5 w-4 bg-white transition-opacity duration-200 ${subpageMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`h-0.5 w-4 bg-white transition-transform duration-200 ${subpageMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+              </button>
             </div>
           </div>
+
+          {/* Mobile/Tablet Dropdown Navigation Menu */}
+          {subpageMenuOpen && (
+            <div className="lg:hidden absolute top-full left-4 right-4 mt-2 bg-[#171327] border border-white/15 rounded-2xl p-5 shadow-2xl z-50 flex flex-col gap-4 text-white animate-fadeIn">
+              <a href="#/" onClick={() => setSubpageMenuOpen(false)} className="text-base font-semibold border-b border-white/10 pb-2 text-white/90 hover:text-white">
+                Home
+              </a>
+              <a href="#/work" onClick={() => setSubpageMenuOpen(false)} className={`text-base font-semibold border-b border-white/10 pb-2 ${currentRoute === '/work' ? 'text-[#CBF24C]' : 'text-white/90 hover:text-white'}`}>
+                Work
+              </a>
+              <a href="#/branding" onClick={() => setSubpageMenuOpen(false)} className={`text-base font-semibold border-b border-white/10 pb-2 ${currentRoute === '/branding' ? 'text-[#CBF24C]' : 'text-white/90 hover:text-white'}`}>
+                Branding
+              </a>
+              <a href="#/web" onClick={() => setSubpageMenuOpen(false)} className={`text-base font-semibold border-b border-white/10 pb-2 ${currentRoute === '/web' ? 'text-[#CBF24C]' : 'text-white/90 hover:text-white'}`}>
+                Web
+              </a>
+              <a href="#/performance" onClick={() => setSubpageMenuOpen(false)} className={`text-base font-semibold border-b border-white/10 pb-2 ${currentRoute === '/performance' ? 'text-[#CBF24C]' : 'text-white/90 hover:text-white'}`}>
+                Performance
+              </a>
+              <a href="#/ai" onClick={() => setSubpageMenuOpen(false)} className={`text-base font-semibold border-b border-white/10 pb-2 ${currentRoute === '/ai' ? 'text-[#CBF24C]' : 'text-white/90 hover:text-white'}`}>
+                AI
+              </a>
+              <a href="#/studio" onClick={() => setSubpageMenuOpen(false)} className={`text-base font-semibold border-b border-white/10 pb-2 ${currentRoute === '/studio' ? 'text-[#CBF24C]' : 'text-white/90 hover:text-white'}`}>
+                Studio
+              </a>
+              <a href="#/contact" onClick={() => setSubpageMenuOpen(false)} className={`text-base font-semibold ${currentRoute === '/contact' ? 'text-[#CBF24C]' : 'text-white/90 hover:text-white'}`}>
+                Contact
+              </a>
+            </div>
+          )}
         </header>
       )}
 
