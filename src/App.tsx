@@ -242,23 +242,6 @@ function ProjectModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 // ACTIVE THEORY HERO COMPONENT MATCHING IMAGE 2
 function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // The hero video is a ~41MB file. On phones — the devices most likely on a
-  // slow or metered connection — that means many seconds of blank white
-  // space before it paints, and real data cost for visitors who bounce
-  // before it ever plays. Only attach it on wider viewports; phones get the
-  // gradient below instead. Read synchronously so it's correct on first
-  // paint, not just after an effect runs.
-  const [showVideo, setShowVideo] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia('(min-width: 768px)').matches
-  );
-
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)');
-    const update = () => setShowVideo(mq.matches);
-    update();
-    mq.addEventListener('change', update);
-    return () => mq.removeEventListener('change', update);
-  }, []);
 
   return (
     <section
@@ -266,23 +249,22 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
       className="relative w-full h-screen h-dvh min-h-screen min-h-dvh overflow-hidden flex flex-col justify-between"
       style={{ background: 'linear-gradient(160deg, #EAE3FC 0%, #F1E4EC 45%, #FBE1CE 100%)' }}
     >
-      {/* Background Video — desktop/tablet only, see showVideo above.
-          The gradient behind it (set on the section) is the fallback for
-          both the mobile case and the moment before the video paints. */}
-      {showVideo && (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          src="/assets/hero-bg.mp4"
-          className="absolute inset-0 z-0 w-full h-[130%] object-cover object-top pointer-events-none"
-          style={{
-            filter: 'none',
-          }}
-        />
-      )}
+      {/* Background Video — now a compressed, self-hosted 12.5MB file (was a
+          41MB external one), so it plays on every device. The gradient set
+          on the section is the fallback for the brief moment before it
+          paints, on any device/connection speed. */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        src="/assets/hero-bg.mp4"
+        className="absolute inset-0 z-0 w-full h-[130%] object-cover object-top pointer-events-none"
+        style={{
+          filter: 'none',
+        }}
+      />
 
       {/* Hero Content & Floating Navigation Layer */}
       <div className="relative z-10 flex flex-col h-full w-full justify-between">
@@ -397,7 +379,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
         </header>
 
         {/* Hero Centered Content matching Image 2 */}
-        <div id="hero-content" className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-64 sm:-mt-76 md:-mt-96 pb-0 max-w-5xl mx-auto">
+        <div id="hero-content" className="flex-1 flex flex-col items-center justify-start sm:justify-center text-center px-4 sm:px-6 pt-16 sm:pt-0 sm:my-auto sm:-mt-76 md:-mt-96 pb-0 max-w-5xl mx-auto">
 
           {/* Main Headline in Instrument Serif */}
           <h1 className="hero-headline text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.03] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
