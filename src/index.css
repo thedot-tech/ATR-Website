@@ -457,7 +457,11 @@
 
 @media (max-width: 1024px) {
   .stats {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat:last-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -1493,5 +1497,38 @@
   .hero-headline {
     font-size: clamp(2.35rem, 9.5vw, 3.4rem) !important;
     line-height: 1.05 !important;
+  }
+}
+
+/* Short-viewport / landscape phones — the portrait-tuned negative margins
+   that pull the hero copy up toward the nav pill push it under the nav
+   entirely once viewport height drops below ~560px (any phone rotated
+   to landscape). Reset that here instead of chasing it per width. */
+@media (max-height: 560px) {
+  #hero-content {
+    margin-top: 12px !important;
+    padding-top: 56px;
+    justify-content: flex-start !important;
+  }
+
+  #hero-content .hero-headline {
+    font-size: clamp(1.4rem, 5vw, 2.1rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  #hero-content p {
+    margin-top: 8px !important;
+    font-size: 12px !important;
+  }
+
+  #cookie-banner {
+    bottom: 12px;
+    padding: 12px 16px;
+    gap: 8px;
+    max-width: 320px;
+  }
+
+  #cookie-banner p {
+    display: none;
   }
 }

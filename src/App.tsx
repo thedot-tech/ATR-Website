@@ -244,7 +244,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <section id="hero" className="relative w-full h-screen h-dvh min-h-screen min-h-dvh overflow-hidden flex flex-col justify-between">
+    <section id="hero" className="relative w-full h-screen h-dvh min-h-screen min-h-dvh overflow-hidden flex flex-col justify-between" style={{ paddingTop: 'env(safe-area-inset-top)', paddingLeft: 'env(safe-area-inset-left)', paddingRight: 'env(safe-area-inset-right)' }}>
       {/* Background Video */}
       <video
         autoPlay
@@ -318,7 +318,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
               {/* Mobile Hamburger Menu Toggle Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden flex flex-col justify-center items-center w-8 h-8 rounded-full bg-black/5 hover:bg-black/10 transition-colors shrink-0"
+                className="md:hidden flex flex-col justify-center items-center w-11 h-11 rounded-full bg-black/5 hover:bg-black/10 transition-colors shrink-0"
                 aria-label="Toggle Navigation Menu"
               >
                 <span className={`h-0.5 w-3.5 sm:w-4 bg-[#1B133C] transition-transform duration-200 ${mobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
@@ -371,7 +371,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
         </header>
 
         {/* Hero Centered Content matching Image 2 */}
-        <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-48 sm:-mt-76 md:-mt-96 pb-0 max-w-5xl mx-auto">
+        <div id="hero-content" className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-48 sm:-mt-76 md:-mt-96 pb-0 max-w-5xl mx-auto">
 
           {/* Main Headline in Instrument Serif */}
           <h1 className="hero-headline text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.03] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
@@ -1448,7 +1448,7 @@ export default function App() {
                     </div>
 
                     {/* Offices Block with Embedded Maps */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 gap-4">
                       {/* US Card */}
                       <div className="p-5 rounded-2xl bg-[#171327] border border-white/10 flex flex-col justify-between">
                         <div>
@@ -1599,7 +1599,7 @@ export default function App() {
 
       {/* FLOATING COOKIE CONSENT POP-UP AT BOTTOM */}
       {showCookie && (
-        <div className="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 bg-[#171327]/95 backdrop-blur-xl border border-white/20 text-white p-5 rounded-2xl shadow-2xl animate-fadeIn flex flex-col gap-3">
+        <div id="cookie-banner" className="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 bg-[#171327]/95 backdrop-blur-xl border border-white/20 text-white p-5 rounded-2xl shadow-2xl animate-fadeIn flex flex-col gap-3" style={{ marginBottom: 'env(safe-area-inset-bottom)' }}>
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-[#CBF24C] font-semibold text-sm">
               <span className="text-base">🍪</span> Cookie Settings
