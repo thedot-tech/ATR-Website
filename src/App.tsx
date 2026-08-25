@@ -397,7 +397,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
         </header>
 
         {/* Hero Centered Content matching Image 2 */}
-        <div id="hero-content" className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-48 sm:-mt-76 md:-mt-96 pb-0 max-w-5xl mx-auto">
+        <div id="hero-content" className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 my-auto -mt-64 sm:-mt-76 md:-mt-96 pb-0 max-w-5xl mx-auto">
 
           {/* Main Headline in Instrument Serif */}
           <h1 className="hero-headline text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.03] sm:leading-[0.96] tracking-[-0.03em] text-[#1B133C] font-serif-instrument font-medium text-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.6)]">
