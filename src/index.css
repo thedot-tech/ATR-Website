@@ -1500,6 +1500,23 @@
   }
 }
 
+/* Notch / Dynamic Island safe area — applied to the floating nav only, so
+   the tappable header clears the notch while the full-bleed hero video and
+   cookie banner still run edge-to-edge under it as intended. */
+#hero-header {
+  padding-top: calc(0.625rem + env(safe-area-inset-top));
+  padding-left: calc(0.625rem + env(safe-area-inset-left));
+  padding-right: calc(0.625rem + env(safe-area-inset-right));
+}
+
+@media (min-width: 640px) {
+  #hero-header {
+    padding-top: calc(1rem + env(safe-area-inset-top));
+    padding-left: calc(1.5rem + env(safe-area-inset-left));
+    padding-right: calc(1.5rem + env(safe-area-inset-right));
+  }
+}
+
 /* Short-viewport / landscape phones — the portrait-tuned negative margins
    that pull the hero copy up toward the nav pill push it under the nav
    entirely once viewport height drops below ~560px (any phone rotated

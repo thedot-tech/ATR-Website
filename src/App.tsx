@@ -244,7 +244,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <section id="hero" className="relative w-full h-screen h-dvh min-h-screen min-h-dvh overflow-hidden flex flex-col justify-between" style={{ paddingTop: 'env(safe-area-inset-top)', paddingLeft: 'env(safe-area-inset-left)', paddingRight: 'env(safe-area-inset-right)' }}>
+    <section id="hero" className="relative w-full h-screen h-dvh min-h-screen min-h-dvh overflow-hidden flex flex-col justify-between">
       {/* Background Video */}
       <video
         autoPlay
@@ -261,7 +261,7 @@ function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
       {/* Hero Content & Floating Navigation Layer */}
       <div className="relative z-10 flex flex-col h-full w-full justify-between">
         {/* Navigation Floating Glass Pill with Ultra-Clean Glassmorphism */}
-        <header className="pt-2.5 sm:pt-4 px-2.5 sm:px-6 w-full max-w-5xl mx-auto flex items-center justify-center relative">
+        <header id="hero-header" className="w-full max-w-5xl mx-auto flex items-center justify-center relative">
           <div className="bg-white/95 backdrop-blur-md rounded-full px-3.5 sm:px-6 py-2 sm:py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex items-center justify-between w-full border border-black/5 transition-all duration-300">
             {/* Active Theory Logo (Enlarged & Vertically Centered) */}
             <div className="flex items-center shrink-0 hover:scale-[1.02] transition-transform duration-200">
