@@ -242,21 +242,47 @@ function ProjectModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 // ACTIVE THEORY HERO COMPONENT MATCHING IMAGE 2
 function ActiveTheoryHero({ onOpenProject }: { onOpenProject: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // The hero video is a ~41MB file. On phones — the devices most likely on a
+  // slow or metered connection — that means many seconds of blank white
+  // space before it paints, and real data cost for visitors who bounce
+  // before it ever plays. Only attach it on wider viewports; phones get the
+  // gradient below instead. Read synchronously so it's correct on first
+  // paint, not just after an effect runs.
+  const [showVideo, setShowVideo] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(min-width: 768px)').matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const update = () => setShowVideo(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
 
   return (
-    <section id="hero" className="relative w-full h-screen h-dvh min-h-screen min-h-dvh overflow-hidden flex flex-col justify-between">
-      {/* Background Video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260714_113715_c7e0daa0-8bdd-4486-a2da-040901f8f0ea.mp4"
-        className="absolute inset-0 z-0 w-full h-[130%] object-cover object-top pointer-events-none"
-        style={{
-          filter: 'none',
-        }}
-      />
+    <section
+      id="hero"
+      className="relative w-full h-screen h-dvh min-h-screen min-h-dvh overflow-hidden flex flex-col justify-between"
+      style={{ background: 'linear-gradient(160deg, #EAE3FC 0%, #F1E4EC 45%, #FBE1CE 100%)' }}
+    >
+      {/* Background Video — desktop/tablet only, see showVideo above.
+          The gradient behind it (set on the section) is the fallback for
+          both the mobile case and the moment before the video paints. */}
+      {showVideo && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          src="/assets/hero-bg.mp4"
+          className="absolute inset-0 z-0 w-full h-[130%] object-cover object-top pointer-events-none"
+          style={{
+            filter: 'none',
+          }}
+        />
+      )}
 
       {/* Hero Content & Floating Navigation Layer */}
       <div className="relative z-10 flex flex-col h-full w-full justify-between">
