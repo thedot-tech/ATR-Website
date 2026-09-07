@@ -1500,6 +1500,19 @@
   }
 }
 
+/* Tablet and up — a single fluid scale instead of the old fixed
+   sm/md/lg breakpoint jumps. The old lg: value (5.5rem, later 4.5rem)
+   was a flat size from 1024px all the way up, so it read oversized on
+   the narrower end of that range — 1024-1440px, which covers common
+   "default" laptop resolutions like a 2018 MacBook Pro (1280x800 /
+   1440x900). This scales continuously with viewport width instead. */
+@media (min-width: 641px) {
+  .hero-headline {
+    font-size: clamp(3rem, 2.2rem + 1.8vw, 4rem) !important;
+    line-height: 1.06 !important;
+  }
+}
+
 /* Notch / Dynamic Island safe area — applied to the floating nav only, so
    the tappable header clears the notch while the full-bleed hero video and
    cookie banner still run edge-to-edge under it as intended. */
