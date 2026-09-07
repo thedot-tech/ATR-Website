@@ -1521,7 +1521,7 @@
    that pull the hero copy up toward the nav pill push it under the nav
    entirely once viewport height drops below ~560px (any phone rotated
    to landscape). Reset that here instead of chasing it per width. */
-@media (max-height: 560px) {
+@media (max-height: 560px) and (max-width: 980px) {
   #hero-content {
     margin-top: 12px !important;
     padding-top: 56px;
@@ -1547,5 +1547,27 @@
 
   #cookie-banner p {
     display: none;
+  }
+}
+
+/* Short desktop/laptop windows — same overlap problem as landscape phones
+   (the desktop -mt-96 pull-up collides with the nav once height drops
+   under ~650px, e.g. 1024×600 netbook/small-laptop panels) but paired
+   with the full desktop nav, so the fix keeps a desktop-scaled headline
+   instead of the phone-sized one above. */
+@media (max-height: 650px) and (min-width: 981px) {
+  #hero-content {
+    margin-top: 12px !important;
+    padding-top: 64px;
+    justify-content: flex-start !important;
+  }
+
+  #hero-content .hero-headline {
+    font-size: clamp(2rem, 4.2vw, 3rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  #hero-content p {
+    margin-top: 10px !important;
   }
 }
