@@ -12,6 +12,9 @@ import {
   NolaOn5thLogo,
   MathiMobilesLogo,
   SamsungLogo,
+  WalmartLogo,
+  BureauVeritasLogo,
+  JointDevelopmentLogo,
 } from './components/ClientLogos';
 
 // Start a Project Modal
@@ -676,6 +679,15 @@ export default function App() {
                   <div className="shrink-0 flex items-center justify-center">
                     <NolaOn5thLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain text-black" />
                   </div>
+                  <div className="shrink-0 flex items-center justify-center">
+                    <WalmartLogo className="h-7 sm:h-8 md:h-9 w-auto object-contain" />
+                  </div>
+                  <div className="shrink-0 flex items-center justify-center">
+                    <BureauVeritasLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
+                  </div>
+                  <div className="shrink-0 flex items-center justify-center">
+                    <JointDevelopmentLogo className="h-9 sm:h-10 md:h-11 w-auto object-contain" />
+                  </div>
 
                   {/* Set 2 (Identical Duplicate for Infinite Seamless Marquee Loop) */}
                   <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
@@ -704,6 +716,15 @@ export default function App() {
                   </div>
                   <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
                     <NolaOn5thLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain text-black" />
+                  </div>
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <WalmartLogo className="h-7 sm:h-8 md:h-9 w-auto object-contain" />
+                  </div>
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <BureauVeritasLogo className="h-10 sm:h-11 md:h-12 w-auto object-contain" />
+                  </div>
+                  <div className="shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <JointDevelopmentLogo className="h-9 sm:h-10 md:h-11 w-auto object-contain" />
                   </div>
                 </div>
               </div>
